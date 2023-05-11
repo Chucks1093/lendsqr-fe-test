@@ -1,0 +1,128 @@
+.userpage_link {
+    display: flex;
+    align-items: center;
+
+    & img {
+        width: 2.5rem;
+    }
+
+    & p {
+        margin-left: .7rem;
+        font-size: 1.1rem;
+    }
+}
+
+.page_details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+
+
+    & h1 {
+        font-size: 1.6rem;
+        font-weight: 600 ;
+    }
+
+    & button {
+        width: 10rem;
+        height: 2.7rem;
+        border-radius: 8px;
+        background-color: #fff;
+        font-weight: 600;
+
+        &.blacklist_btn {
+            color: #E4033B;
+            border: 1px solid #E4033B;
+
+        }
+
+        &.activate_btn {
+            color: #39CDCC;
+            border: 1px solid #39CDCC;
+            margin-left: 1.5rem;
+
+        }
+    }
+
+}
+
+
+.user_details {
+    margin-top: 2rem;
+    padding: 1rem  1rem 0;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+
+    & .user_profile {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        width: 60%;
+
+        
+
+        & .user_img {
+            $value: 5rem;
+            width: $value;
+            height: $value;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+       }
+
+    }
+
+    & .profile_sections {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: .5rem;
+
+        & h3 {
+            position: relative;
+            font-size: .9rem;
+            font-weight: 500;
+            
+            &::after {
+                content:  "";
+                position: absolute;
+                left: 0;
+                bottom: -.6rem;
+                width: 100%;
+                height: .2rem;
+                background-color: #39CDCC;
+                border-radius: .2rem ;
+            }
+
+        }
+    }
+
+    
+}
+
+
+.user_info {
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+
+    & > div {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); //as the screen size decreases the size of the box  increases until it reaches 10rem
+        column-gap: 1.5rem;
+        grid-row: auto; 
+        justify-content: center;
+        grid-auto-rows: auto;
+        row-gap: 2rem;
+
+        & h3 {
+            grid-column: 1/-1;
+            margin-top: 1.5rem;
+        }
+
+    }
+
+}

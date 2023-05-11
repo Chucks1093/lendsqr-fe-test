@@ -1,0 +1,35 @@
+.reports {
+    width: 100%;
+    margin: 3rem 0 0 0;
+    border: 1px solid red;
+    padding: 1rem;
+    position: relative;
+
+    & * {
+        // border: 1px solid red;
+    }
+
+}
+
+.reports_title {
+    display: grid;
+    grid-template-columns: 15% 15% 20% 17% 20% 13%;
+
+    position: relative;
+    height: 3rem;
+    align-items: center;
+
+    & .report_filter p {
+        font-size: .9rem;
+        font-weight: 600;
+    }
+    
+    & img {
+        width: 1rem;                    
+    }
+    & .report_filter {
+        display: flex;
+        border: 1px  solid red;
+    }
+}
+

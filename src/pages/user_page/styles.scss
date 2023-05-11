@@ -1,0 +1,36 @@
+.analytics_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); //as the screen size decreases the size of the box until it reaches 10rem
+    column-gap: 1.5rem;
+    grid-row: auto;
+    justify-content: center;
+    grid-auto-rows: auto;
+    row-gap: 4rem;
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.user_options {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0 1.5rem;
+
+    & .show_users {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid red;
+
+        & select {
+            margin: 0 1rem;
+        }
+    }
+
+    & .more_users {
+        display: flex;
+        width: 13rem;
+        border: 1px solid red;
+        justify-content: space-between;
+
+    }
+}
+

@@ -1,0 +1,54 @@
+.user_report {
+    display: grid;
+    grid-template-columns: 15% 15% 20% 17% 20% 13%;
+    height: 4rem;
+    align-items: center;
+    position: relative;
+    
+    & p {
+        // border: 1px solid red;
+        font-size: .8rem;
+        word-wrap: break-word;
+
+        &.tel , &.lender_name {
+            padding-left: .75rem;
+        }
+
+    };
+
+    & .user_status {
+        display: flex;
+        justify-content: space-between;
+        padding:  0 1rem 0 0;
+
+        & img {
+            cursor: pointer;
+        }
+
+    }
+}
+
+.details_modal {
+    position: absolute;
+    width: 12rem;    
+    background-color: aquamarine;
+    top: 1rem;
+    right: -4.5%;
+    padding: 0rem 3rem .8rem 1.4rem ;
+    z-index: 4  ;
+
+    & img {
+        width: 1.2rem;
+    }
+    
+    & div {     
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        margin-top: 1rem;
+    }
+    
+
+
+}

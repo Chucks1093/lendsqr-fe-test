@@ -1,0 +1,12 @@
+.dash_board {
+    display: grid;
+    grid-template-columns: .2fr .8fr;
+    grid-template-rows: 11vh 89vh;
+
+}
+
+.out_let {  
+    padding: 2rem 2rem 0 ;
+
+    overflow-y: scroll;
+}
