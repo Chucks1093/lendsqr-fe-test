@@ -1,19 +1,21 @@
 .reports {
     width: 100%;
     margin: 3rem 0 0 0;
-    border: 1px solid red;
-    padding: 1rem;
+    border-radius: 8px;
+    padding: 1.9rem 1rem 1rem 1.8rem;
     position: relative;
+    background-color: #fff;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.103);
 
-    & * {
-        // border: 1px solid red;
-    }
 
 }
 
 .reports_title {
     display: grid;
     grid-template-columns: 15% 15% 20% 17% 20% 13%;
+    margin-bottom: .5rem;
+    width: 98.5%;
+
 
     position: relative;
     height: 3rem;
@@ -21,15 +23,16 @@
 
     & .report_filter p {
         font-size: .9rem;
+        color: #545F7D;
         font-weight: 600;
     }
     
     & img {
-        width: 1rem;                    
+        width: .75rem;
+        margin-left: .3rem;                   
     }
     & .report_filter {
         display: flex;
-        border: 1px  solid red;
     }
 }
 

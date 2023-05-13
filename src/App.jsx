@@ -5,10 +5,9 @@ import SignIn from "./pages/login/SignIn";
 import UserDetails from "./pages/user_details/UserDetails";
 import "./App.scss";
 
-
-
-function App() {
 	
+function App() {
+
 	return (
 		<BrowserRouter>
 			<Routes>

@@ -1,8 +1,6 @@
 import { Fragment } from "react";
 import "./styles.scss";
 
-
-
 function TopNav() {
 	return (
         <header  className="header">
@@ -11,7 +9,7 @@ function TopNav() {
                 <span>lendsqr</span>
             </div>
             <form className="dashboard_form" action="">
-                <input placeholder="Search for anything" type="text" />
+                <input placeholder="Search for aanything" type="text" />
                 <button><img src="/svg/search.svg" alt="" /></button>
             </form>
             <div className="header_info">

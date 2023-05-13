@@ -1,10 +1,13 @@
 import { useState } from "react";
 
 function useVisibility() {
-    const [visiblility, setVisibility] = useState(false);
-    const showVisibility = () => setVisibility(true);
-    const hideVisiblity = () => setVisibility(false);
-	return {visiblility, showVisibility, hideVisiblity}
+	const [visibility, setVisibility] = useState(false);
+	const showVisibility = () => {
+		console.log("shown");
+		setVisibility(true);
+	};
+	const hideVisiblity = () => setVisibility(false);
+	return { visibility, showVisibility, hideVisiblity };
 }
 
 export default useVisibility;

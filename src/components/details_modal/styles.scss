@@ -1,0 +1,22 @@
+.details_modal {
+    position: absolute;
+    width: 12rem;    
+    background-color: aquamarine;
+    top: 1rem;
+    right: -4.5%;
+    padding: 0rem 3rem .8rem 1.4rem ;
+    z-index: 3  ;
+
+    & img {
+        width: 1.2rem;
+    }
+    
+    & div {     
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        margin-top: 1rem;
+    }
+    
+}

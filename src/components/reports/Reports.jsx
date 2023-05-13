@@ -1,9 +1,12 @@
 import "./styles.scss";
 import UserReport from "../user_report/UserReport";
 import Sorter from "../sorter/Sorter";
-import useLenders from "../../hooks/useLenders";
+import { useEffect, useState } from "react";
 
-function Reports({lenders}) {	
+
+
+function Reports({lenders}) {
+		
 	
 	return (
 		<div className="reports">
@@ -33,13 +36,15 @@ function Reports({lenders}) {
 					<img src="/svg/filter.svg" alt="organization" />
 				</div>
 			</div>	
-			{lenders.map(lender => (
+			{lenders.map((lender, i) => (
 				<UserReport 
+					key={i}
 					organization={lender.orgName}
 					name={lender.userName}
 					email={lender.email}
 					tel={lender.phoneNumber}
 					date={lender.createdAt}
+					status={lender.status}
 				/>
 			))}
             <Sorter />

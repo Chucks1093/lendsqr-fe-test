@@ -1,20 +1,27 @@
+
+
 .header {
-    background-color: rgb(164, 228, 164);
+    background-color: #fff;
     grid-column: 1/3;
     grid-row: 1/2;
-    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.048);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1.5rem;
+    z-index: 1;
 };
 
 .dashboard_logo {
 
+    & img {
+        height: 1.3rem;
+    }
+
     & span {
-        color: #213F7D;
-        font-size: 1.3rem;
-        font-weight: 620;
+        color: #3156a0;
+        font-size: 1.4rem;
+        font-weight: 640;
         margin-left: .5rem;
     }
 
@@ -39,11 +46,11 @@
 
     & span {
         font-weight: 500;
-        color: rgb(49, 55, 65);
+        color: #21407db7;
     }
 
     & .user_image {
-        $value: 2.5rem;
+        $value: 2.4rem;
         width: $value;
         height: $value;
         border-radius: 50%;
@@ -52,36 +59,42 @@
 
     & .list {
         width: 2.5rem;
+
     }
 
 };
 
 .dashboard_form {
     display: flex;
-    height: 2.6rem;
-    border: 1px solid #213F7D;
-    opacity: 0.2;
+    height: 2.5rem;
+    border: 1px solid rgb(33, 63, 125, 0.2);
+    width: 30%;
+    min-width: 20rem;
     border-radius: 8px;
+    position: relative;
 
     & input {
-        width: 25rem;
+        width: 100%;
         height: 100%;
         border: 0;
         border-radius: 8px 0 0 8px;
         text-indent: 1rem;
         
         &::placeholder {
-            color: #545F7D;
+            color: #545f7d5d;
             opacity: 0.7;
         }
     }
 
     & button {
         width: 3rem;
+        right: 0;
+        top: 0;
         height: 100%;
         border-radius: 0 8px 8px 0;
         border: 0;
-        ;background: #39CDCC;
+        background-color: #21407d79;
+        cursor: pointer;
 
 
         & img {

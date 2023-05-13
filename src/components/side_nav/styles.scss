@@ -1,9 +1,29 @@
 nav {
     grid-column: 1/2;
     grid-row: 2/3;
-    background-color: rgb(231, 201, 201);
+    background-color: #fff;
     overflow-y: scroll;
     padding:3.5rem 0 0 1.5rem;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.082);
+
+    &::-webkit-scrollbar {
+        background-color: #ffffff;
+        width: .3rem;
+   }
+
+   &::-webkit-scrollbar-thumb {
+        background-color: #f0ece9;
+        width: 16px;
+        height: 4rem;
+        border-radius: .5rem;
+        opacity: 0;
+
+        &:hover {
+            background-color: #545F7D;
+
+        }
+   }
+
 
     & h3 {
         color: #545F7D;
@@ -17,4 +37,5 @@ nav {
 
     }
 }   
+
 
