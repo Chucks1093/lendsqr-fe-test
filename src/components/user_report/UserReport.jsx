@@ -2,7 +2,6 @@ import "./styles.scss";
 import useVisibility from "../../hooks/useVisibility";
 import dateFormatter from "../../utils/dateFormatter";
 import DetailsModal from "../details_modal/detailsModal";
-import changeStatusClass from "../../utils/changeStatusClass";
 
 
 
@@ -19,7 +18,7 @@ function UserReport(props) {
 			<p className="tel">{props.tel}</p>
 			<p>{formattedDate}</p>
 			<div className="user_status">
-				<p className={props.status}>{props.status}</p>
+				<p className={`status ${props.status}`}>{props.status}</p>
 				<img onClick={showVisibility} src="/svg/more.svg" alt="more" />
 				<DetailsModal visibility={visibility} hideVisiblity={hideVisiblity} />
 			</div>

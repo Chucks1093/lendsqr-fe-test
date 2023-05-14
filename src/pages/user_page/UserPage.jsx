@@ -8,7 +8,7 @@ function UserPage() {
 	const { lenders, showNextLenders, showPrevLenders } = useLenders();
 	return (
 		<Fragment>
-			<h1>Users</h1>
+			<h1 className="page_title">Users</h1>
 			<div className="analytics_container">
 				<Analytics image="allusers" title={"USERS"} metrics={"2,453"} color={"rgba(223, 24, 255, 0.1) "} />
 				<Analytics color={"rgb(87, 24, 255, 0.1)"} image="activeusers" title={"ACTIVE USERS"} metrics={"2,453"} />

@@ -1,3 +1,8 @@
+.page_title{
+    color: #545f7ddf;
+    font-weight: 500;
+}
+
 .analytics_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); //as the screen size decreases the size of the box until it reaches 10rem
@@ -8,7 +13,8 @@
     row-gap: 4rem;
     margin-top: 3rem;
     width: 100%;
-}
+    
+};
 
 .user_options {
     display: flex;

@@ -1,22 +1,50 @@
 .details_modal {
     position: absolute;
     width: 12rem;    
-    background-color: aquamarine;
+    background-color: #fff;
     top: 1rem;
     right: -4.5%;
-    padding: 0rem 3rem .8rem 1.4rem ;
+    padding: 0rem 3rem .9rem 1.4rem ;
     z-index: 3  ;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.153);
+    border-radius: 8px;
+
+    & p {
+        font-weight: 600;
+        font-size: .89rem;
+    }
 
     & img {
         width: 1.2rem;
+        margin-right: .5rem;
+        display: block;
     }
     
     & div {     
         justify-content: space-between;
         display: flex;
         align-items: center;
-        font-weight: 500;
         margin-top: 1rem;
+        color: #545f7de5;
+
+
+    }
+    & a{
+        padding-right:.5rem;
+        display: block;
+        text-decoration: none;
+        
     }
     
+}
+
+
+.dash_board_cover {
+    position:absolute;
+    top: 0;
+    left: 0;
+    height: 110vh;
+    width: 100%;
+    z-index: 2;
+
 }

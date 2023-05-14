@@ -1,7 +1,6 @@
-import { Fragment} from "react";
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./styles.scss";
-
 
 function DetailsModal({ hideVisiblity, visibility }) {
 	return (
@@ -15,8 +14,8 @@ function DetailsModal({ hideVisiblity, visibility }) {
 				style={{ display: `${visibility ? "block" : "none"}` }}
 				className="details_modal"
 			>
-				<Link to="/dashboard/details">
-					<div>
+				<Link  to="/dashboard/details">
+					<div  >
 						<img src="/svg/eye.svg" alt="eye_icon" />
 						<p>View Details</p>
 					</div>

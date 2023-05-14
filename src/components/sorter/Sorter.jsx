@@ -1,41 +1,23 @@
 import "./styles.scss";
+import { useState } from "react";
+import Selector from "../Selector/Selector";
+import Input from "../input_bar/Input";
 
 function Sorter() {
+
 	return (
 		<div className="sorter">
-			<label htmlFor="organization">Organization</label>
-			<select
-				name="organizaation"
-				id="organizaation"
-				value={"Select An option"}
-			>
-				<option value="Select">SFggewqi</option>
-				<option value="Select">uzzzzzzegffq</option>
-				<option value="Select">ugauuur</option>
-				<option value="Select">ppeufb</option>
-			</select>
-
-			<label htmlFor="username">Username</label>
-			<input type="text" id="username" placeholder="User" />
-			<label htmlFor="email">Email</label>
-			<input type="email" name="email" id="email" />
-			<label htmlFor="date">Date</label>
-			<input type="date" name="date" id="date" />
-			<label htmlFor="phone">Phone Number</label>
-			<input type="tel" name="phone" id="phone" />
-			<label htmlFor="status">Status</label>
-			<select
-				name="organizaation"
-				id="organizaation"
-				defaultValue={"Select An option"}
-			>
-				<option value="Select">SFggewqi</option>
-				<option value="Select">uegffq</option>
-				<option value="Select">ugauuur</option>
-				<option value="Select">ppeufb</option>
-			</select>
-			<button type="reset">Reset</button>
-			<button type="button">Filter</button>
+			<Selector label={"organization"} options={["dhdh", "shhshs"]}  />
+			<Input label="Username" type="text" />
+			<Input  label="Email" type="email" />
+			<Input  label="Date" type="date" />
+			<Input  label="Phone Number" type="number" />
+			<Input  label="Email" type="emai" />
+			<Selector label={"status"} options={["dhdh", "shhshs"]}  />
+			<div className="button_cover">
+				<button className="reset_btn" type="reset">Reset</button>
+				<button className="filter_btn" type="button">Filter</button>
+			</div>
 		</div>
 	);
 }

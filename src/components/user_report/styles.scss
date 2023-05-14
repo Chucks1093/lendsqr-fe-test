@@ -34,8 +34,32 @@
         justify-content: space-between;
         padding:  0 1rem 0 0;
 
-        & .active {
-            color: #39CD62;
+        & .status {
+            padding: .5rem .8rem;   
+            text-transform: capitalize;
+            border-radius: 100px;
+            position: relative;
+            right: 8%;
+
+
+            &.active {
+                color: #39CD62;
+                background-color: rgb(57, 205, 98, 0.06);
+            }
+
+            &.blacklisted {
+                color: #E4033B;
+                background-color: rgb(228, 3, 59, 0.1);
+            }
+
+            &.inactive {
+                color: #545F7D;
+                background-color: rgb(84, 95, 125, 0.06);
+            }
+            &.pending {
+                color: #E9B200;
+                background-color: rgb(233, 178, 0, 0.1);
+            }
         }
 
         & img {
