@@ -17,10 +17,10 @@ function Selector(props) {
 				id={props.label}
                 value={value}
                 onChange={handleChange}
-			>
+			> 
                 <option className="default_option" value="" disabled>Select</option>
-                {props.options.map(option => (
-                    <option value={option}>{option}</option>
+                {props.options.map((option, i) => (
+                    <option key={i} value={option}>{option}</option>
                 ))}
 			</select>
         </div>

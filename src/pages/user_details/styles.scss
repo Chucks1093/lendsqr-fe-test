@@ -18,6 +18,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 1.8rem;
+    background-color: #fff;
 
 
     & h1 {
@@ -54,6 +55,7 @@
     padding: 2.3rem 2rem .7rem 2rem;
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.103);
     border-radius: 8px;
+    background-color: #fff;
     $value: 7.5rem;
     
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.06);
@@ -191,6 +193,7 @@
     margin-bottom: 3rem;
     padding: 0 2rem;
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    background-color: #ffffff;
 
     & > div {
         display: grid;

@@ -10,10 +10,30 @@ function UserPage() {
 		<Fragment>
 			<h1 className="page_title">Users</h1>
 			<div className="analytics_container">
-				<Analytics image="allusers" title={"USERS"} metrics={"2,453"} color={"rgba(223, 24, 255, 0.1) "} />
-				<Analytics color={"rgb(87, 24, 255, 0.1)"} image="activeusers" title={"ACTIVE USERS"} metrics={"2,453"} />
-				<Analytics color={"rgb(245, 95, 68, 0.1)"} image={"loans_user"} title={"USERS WITH LOAN"} metrics={"2,543"} />
-				<Analytics color={"rgb(255, 51, 102, 0.1)"} image={"savings_user"} title={"USERS WITH SAVINGS"} metrics={"102,453"} />
+				<Analytics
+					image="allusers"
+					title={"USERS"}
+					metrics={"2,453"}
+					color={"rgba(223, 24, 255, 0.1)"}
+				/>
+				<Analytics
+					color={"rgb(87, 24, 255, 0.1)"}
+					image="activeusers"
+					title={"ACTIVE USERS"}
+					metrics={"2,453"}
+				/>
+				<Analytics
+					color={"rgb(245, 95, 68, 0.1)"}
+					image={"loans_user"}
+					title={"USERS WITH LOAN"}
+					metrics={"2,543"}
+				/>
+				<Analytics
+					color={"rgb(255, 51, 102, 0.1)"}
+					image={"savings_user"}
+					title={"USERS WITH SAVINGS"}
+					metrics={"102,453"}
+				/>
 			</div>
 			<Reports lenders={lenders} />
 			<div className="user_options">

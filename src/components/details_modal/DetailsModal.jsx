@@ -1,21 +1,21 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles.scss";
 
-function DetailsModal({ hideVisiblity, visibility }) {
+
+function DetailsModal({ visibility }) {
+	const [index, setIndex] = useState(0);
+
+
+
+
 	return (
-		<Fragment>
-			<div
-				style={{ display: `${visibility ? "block" : "none"}` }}
-				className="dash_board_cover"
-				onClick={hideVisiblity}
-			></div>
 			<div
 				style={{ display: `${visibility ? "block" : "none"}` }}
 				className="details_modal"
 			>
 				<Link  to="/dashboard/details">
-					<div  >
+					<div >
 						<img src="/svg/eye.svg" alt="eye_icon" />
 						<p>View Details</p>
 					</div>
@@ -29,7 +29,6 @@ function DetailsModal({ hideVisiblity, visibility }) {
 					<p>Activate User</p>
 				</div>
 			</div>
-		</Fragment>
 	);
 }
 export default DetailsModal;

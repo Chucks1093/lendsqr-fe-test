@@ -24,7 +24,7 @@
   
             /* Use a custom image as the calendar icon */
             &::-webkit-calendar-picker-indicator {
-                background-image: url("../../../public/svg/calendar.svg");
+                background-image: url("/svg/calendar.svg");
                 background-repeat: no-repeat;
                 background-size: contain;
             }

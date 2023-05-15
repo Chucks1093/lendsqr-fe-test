@@ -36,7 +36,7 @@ function Reports({lenders}) {
 					<img src="/svg/filter.svg" alt="organization" />
 				</div>
 			</div>	
-			{lenders.map((lender, i) => (
+			{lenders.map((lender, i	) => (
 				<UserReport 
 					key={i}
 					organization={lender.orgName}
@@ -45,6 +45,7 @@ function Reports({lenders}) {
 					tel={lender.phoneNumber}
 					date={lender.createdAt}
 					status={lender.status}
+					id={lender.id}
 				/>
 			))}
             <Sorter />
