@@ -1,12 +1,6 @@
-import getLocalStorage from "./localStorage"
-
-const data = getLocalStorage();
-
 
 
 function addAPIData(data){
-    // const { edu , guarantor, profile, } = data;
-    
     const personalInfo = [
         {
             top: "full Name",

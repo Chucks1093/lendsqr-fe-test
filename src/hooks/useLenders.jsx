@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import getLocalStorage from "../utils/localStorage";
 
+
 function useLenders() {
     const [lenders, setLenders] = useState(getLocalStorage());
 	const [{start , end}, setIndex] = useState({start: 0, end: 10})

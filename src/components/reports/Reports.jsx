@@ -2,12 +2,11 @@ import "./styles.scss";
 import UserReport from "../user_report/UserReport";
 import Sorter from "../sorter/Sorter";
 import { useEffect, useState } from "react";
+import useVisibility from "../../hooks/useVisibility";
+import getLocalStorage from "../../utils/localStorage";
 
 
-
-function Reports({lenders}) {
-		
-	
+function Reports({ lenders }) {
 	return (
 		<div className="reports">
 			<div className="reports_title">
@@ -36,7 +35,7 @@ function Reports({lenders}) {
 					<img src="/svg/filter.svg" alt="organization" />
 				</div>
 			</div>	
-			{lenders.map((lender, i	) => (
+			{lenders.map((lender, i) => (
 				<UserReport 
 					key={i}
 					organization={lender.orgName}

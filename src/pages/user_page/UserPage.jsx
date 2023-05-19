@@ -1,11 +1,12 @@
 import "./styles.scss";
 import Analytics from "../../components/analytics/Analytics";
 import Reports from "../../components/reports/Reports";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import useLenders from "../../hooks/useLenders";
 
 function UserPage() {
 	const { lenders, showNextLenders, showPrevLenders } = useLenders();
+	// const [userStatus, setUserStatus] = useState(false);
 	return (
 		<Fragment>
 			<h1 className="page_title">Users</h1>
