@@ -6,8 +6,8 @@ function useLenders() {
     const [lenders, setLenders] = useState(getLocalStorage());
 	const [{start , end}, setIndex] = useState({start: 0, end: 10})
 	const [userStatus, setUserStatus] = useState(false);
+
 	useEffect(()=>{
-		console.log("changing user status...")
 		const newArr = getLocalStorage().slice(start, end);
 		setLenders(newArr)
 	}, [userStatus]);
@@ -27,6 +27,6 @@ function useLenders() {
 		setIndex({start: start - 10, end: end - 10});
 	};
 	
-	return { lenders, showNextLenders, showPrevLenders, setUserStatus, setLenders };
+	return { lenders, showNextLenders, showPrevLenders, setUserStatus};
 }
 export default useLenders;

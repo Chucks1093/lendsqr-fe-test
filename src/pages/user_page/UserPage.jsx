@@ -6,7 +6,7 @@ import useLenders from "../../hooks/useLenders";
 import StatusContext from "../../context/StatusContext";
 
 function UserPage() {
-	const { lenders, showNextLenders, showPrevLenders, setUserStatus, setLenders } = useLenders();
+	const { lenders, showNextLenders, showPrevLenders, setUserStatus } =useLenders();
 
 	return (
 		<Fragment>
@@ -37,7 +37,7 @@ function UserPage() {
 					metrics={"102,453"}
 				/>
 			</div>
-			<StatusContext.Provider value={{setUserStatus}}>
+			<StatusContext.Provider value={{ setUserStatus }}>
 				<Reports lenders={lenders} />
 			</StatusContext.Provider>
 			<div className="user_options">

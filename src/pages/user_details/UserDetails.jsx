@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 import "./styles.scss";
 import getLocalStorage from "../../utils/localStorage";
@@ -12,6 +12,16 @@ function UserDetails(props) {
 	userID = userID - 1;
 	const profile = addAPIData(userData[userID])
 	const {firstName, lastName} = userData[userID].profile;
+	const activateUser =()=> {
+		const userStatus = userData[userID].status;
+		userData[userID].status = userStatus == "blacklisted" ? "active" : userStatus;
+		localStorage.setItem("users", JSON.stringify(userData));
+	};
+	const blackListUser =() => {
+		const userStatus = userData[userID].status;
+		userData[userID].status = userStatus == "active" ? "blacklisted" : userStatus;
+		localStorage.setItem("users", JSON.stringify(userData));
+	}
 	
 
 	return (
@@ -23,8 +33,8 @@ function UserDetails(props) {
 			<div className="page_details">
 				<h1 className="page_title">User Details</h1>
 				<div>
-					<button className="blacklist_btn">BLACKLIST USER</button>
-					<button className="activate_btn">ACTIVATE USER</button>
+					<button className="blacklist_btn" onClick={blackListUser}>BLACKLIST USER</button>
+					<button className="activate_btn" onClick={activateUser}>ACTIVATE USER</button>
 				</div>
 			</div>
 			<div className="user_details">
