@@ -1,32 +1,14 @@
-import { Fragment, useEffect, useState } from "react";
-import { Link, json } from "react-router-dom";
+import {useContext} from "react";
+import { Link } from "react-router-dom";
 import "./styles.scss";
-import getLocalStorage from "../../utils/localStorage";
+import StatusContext from "../../context/StatusContext";
+import activateUser from "../../utils/activateUser";
+import blackListUser from "../../utils/blackListUser";
 
-function activateUser(e) {
-	const allData = getLocalStorage();
-	const id = e.currentTarget.parentElement.previousElementSibling.id -1;
-	console.log(allData[id].status, "before")
-	const userCurrentStatus = allData[id].status;
-	allData[id].status = userCurrentStatus == "blacklisted"? "active" : userCurrentStatus;
-	console.log(allData)
-	console.log(allData[id].status, "after");
-	localStorage.setItem("users", JSON.stringify(allData));
-}
-
-function blackListUser(e) {
-	const allData = getLocalStorage();
-	const id = e.currentTarget.parentElement.previousElementSibling.id - 1;
-	console.log(allData[id].status, "before")
-	const userCurrentStatus = allData[id].status;
-	allData[id].status = userCurrentStatus == "active"? "blacklisted" : userCurrentStatus;
-	console.log(allData)
-	console.log(allData[id].status, "after")
-	localStorage.setItem("users", JSON.stringify(allData));
-
-}
 
 function DetailsModal({ id }) {
+	const { setUserStatus} = useContext(StatusContext);
+	console.log(setUserStatus)
 	return (
 		<div className="details_modal">
 			<Link to={`/dashboard/details/${id}`}>
@@ -35,11 +17,11 @@ function DetailsModal({ id }) {
 					<p>View Details</p>
 				</div>
 			</Link>
-			<div onClick={blackListUser}>
+			<div onClick={(e)=>blackListUser(setUserStatus, e)}>
 				<img src="/svg/blacklist_user.svg" alt="blacklist_users" />
 				<p>Blacklist User</p>
 			</div>
-			<div onClick={activateUser}>
+			<div onClick={(e)=>activateUser(setUserStatus, e)}>
 				<img src="/svg/activate_user.svg" alt="active_user" />
 				<p>Activate User</p>
 			</div>

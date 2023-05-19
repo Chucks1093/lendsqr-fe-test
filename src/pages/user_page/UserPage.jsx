@@ -3,10 +3,11 @@ import Analytics from "../../components/analytics/Analytics";
 import Reports from "../../components/reports/Reports";
 import { Fragment, useState } from "react";
 import useLenders from "../../hooks/useLenders";
+import StatusContext from "../../context/StatusContext";
 
 function UserPage() {
-	const { lenders, showNextLenders, showPrevLenders } = useLenders();
-	// const [userStatus, setUserStatus] = useState(false);
+	const { lenders, showNextLenders, showPrevLenders, setUserStatus, setLenders } = useLenders();
+
 	return (
 		<Fragment>
 			<h1 className="page_title">Users</h1>
@@ -36,7 +37,9 @@ function UserPage() {
 					metrics={"102,453"}
 				/>
 			</div>
-			<Reports lenders={lenders} />
+			<StatusContext.Provider value={{setUserStatus}}>
+				<Reports lenders={lenders} />
+			</StatusContext.Provider>
 			<div className="user_options">
 				<div className="show_users">
 					<p>Showing</p>
