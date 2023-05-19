@@ -26,6 +26,7 @@
         align-items: center;
         margin-top: 1rem;
         color: #545f7de5;
+        cursor: pointer;
 
 
     }
@@ -38,14 +39,3 @@
     
 }
 
-
-.dash_board_cover {
-    position:absolute;
-    top: 0;
-    left: 0;
-    height: 110vh;
-    width: 100%;
-    z-index: 2;
-    background-color: red;
-
-}

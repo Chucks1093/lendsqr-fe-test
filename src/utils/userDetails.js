@@ -21,9 +21,6 @@ function addAPIData(data){
             bottom: data.email 
         },
         {
-            top: ""
-        },
-        {
             top: "BVN",
             bottom: data.profile.bvn
         },

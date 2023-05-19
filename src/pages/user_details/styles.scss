@@ -156,6 +156,7 @@
         display: flex;
         justify-content: space-between;
         position: relative;
+        padding: 0 1rem;
         
         
         & h3 {
@@ -196,11 +197,11 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); //as the screen size decreases the size of the box  increases until it reaches 10rem
         // column-gap: 1.5rem;
-        // grid-template-columns: .8fr .8fr 1fr .8fr ;
+        grid-template-columns: .8fr .8fr 1fr .8fr ;
         grid-row: auto; 
         justify-content: center;
         grid-auto-rows: auto;
-        row-gap: 2rem;
+        row-gap: 2.7rem;
         padding: 0rem 1rem 2rem .5rem;
         border-bottom: 1px solid rgba(33, 64, 125, 0.189);
 
@@ -234,7 +235,8 @@
                 font-family: "WorkSans";
                 font-weight: 600;
                 color: #545F7D;
-                word-wrap: wrap;
+                font-size: .9rem;
+                padding-right: 1rem;
 
             }
         }

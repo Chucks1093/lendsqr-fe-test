@@ -8,7 +8,8 @@ import addAPIData from "../../utils/userDetails";
 
 function UserDetails(props) {
 	let userData = getLocalStorage();
-    const { userID }= useParams();
+    let { userID }= useParams();
+	userID = userID - 1;
 	const profile = addAPIData(userData[userID])
 	const {firstName, lastName} = userData[userID].profile;
 	
