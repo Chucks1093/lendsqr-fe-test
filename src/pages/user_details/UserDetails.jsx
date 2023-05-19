@@ -2,12 +2,17 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./styles.scss";
 import getLocalStorage from "../../utils/localStorage";
+import { useParams } from "react-router-dom";
+import Section from "../../components/user_details_section/Section";
+import addAPIData from "../../utils/userDetails";
 
 function UserDetails(props) {
-	let [userData] = getLocalStorage();
-	userData = userData[1];
-	console.log(userData)
+	let userData = getLocalStorage();
+    const { userID }= useParams();
+	const profile = addAPIData(userData[userID])
+	const {firstName, lastName} = userData[userID].profile;
 	
+
 	return (
 		<Fragment>
 			<Link to="/dashboard" className="userpage_link">
@@ -24,22 +29,37 @@ function UserDetails(props) {
 			<div className="user_details">
 				<div className="user_profile">
 					<div className="user_img">
-						<img src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/725.jpg" alt="person" />
+						<img
+							src={userData[userID].profile.avatar}
+							alt="person"
+						/>
 					</div>
 					<div className="user_id">
-						<h3>Grace Effiom</h3>
-						<span>LSQFf587g90</span>
+						<h3>{`${lastName} ${firstName}`}</h3>
+						<span>{userData[userID].accountNumber}</span>
 					</div>
 					<div className="user_tier">
 						<p>User’s Tier</p>
 						<div>
-							<img className="star" src="/svg/filled_star.svg" alt="" />
-							<img className="star middle"  src="/svg/unfilled_star.svg" alt="" />
-							<img className="star"  src="/svg/unfilled_star.svg" alt="" />
+							<img
+								className="star"
+								src="/svg/filled_star.svg"
+								alt=""
+							/>
+							<img
+								className="star middle"
+								src="/svg/unfilled_star.svg"
+								alt=""
+							/>
+							<img
+								className="star"
+								src="/svg/unfilled_star.svg"
+								alt=""
+							/>
 						</div>
 					</div>
 					<div className="user_finance">
-						<h4>₦200,000.00</h4>
+						<h4>{`₦${userData[userID].accountBalance}`}</h4>
 						<p>9912345678/Providus Bank</p>
 					</div>
 				</div>
@@ -53,162 +73,10 @@ function UserDetails(props) {
 				</div>
 			</div>
 			<div className="user_info">
-				<div>
-					<h3>Pesonal Information</h3>
-					<div className="info">
-						<p className="top">FULL NAME</p>
-						<p className="bottom">Grace Effiom</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-				</div>
-				<div>
-					<h3>Pesonal Information</h3>
-					<div className="info">
-						<p className="top">FULL NAME</p>
-						<p className="bottom">Grace Effiom</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-				</div>
-				<div>
-					<h3>Pesonal Information</h3>
-					<div className="info">
-						<p className="top">FULL NAME</p>
-						<p className="bottom">Grace Effiom</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-				</div>
-				<div>
-					<h3>Pesonal Information</h3>
-					<div className="info">
-						<p className="top">FULL NAME</p>
-						<p className="bottom">Grace Effiom</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-					<div className="info">
-						<p className="top">Phone Number</p>
-						<p className="bottom">07060780922</p>
-					</div>
-				</div>
+				<Section title="Personal Information" data={profile.personalInfo} />
+				<Section title="Education and Employment" data={profile.education} />
+				<Section title="Socials" data={profile.socials} />
+				<Section title="Gurantor" data={profile.guarantor} />
 			</div>
 		</Fragment>
 	);

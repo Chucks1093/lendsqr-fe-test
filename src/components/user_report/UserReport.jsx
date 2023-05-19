@@ -28,7 +28,7 @@ function UserReport(props) {
 			<div className="user_status">
 				<p className={`status ${props.status}`}>{props.status}</p>
 				<img id={props.id} className="more" onClick={showVisibility} src="/svg/more.svg" alt="more" />
-				<DetailsModal  visibility={visibility} />
+				<DetailsModal id={props.id} visibility={visibility} />
 			</div>
 		</div>
 	);

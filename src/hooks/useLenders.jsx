@@ -6,7 +6,6 @@ function useLenders() {
 	const [{start , end}, setIndex] = useState({start: 0, end: 10})
 	useEffect(()=>{
 		const newArr = getLocalStorage().slice(start, end);
-		console.log(newArr, "current")
 		setLenders(newArr)
 	}, []);
 

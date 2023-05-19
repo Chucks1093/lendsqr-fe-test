@@ -1,103 +1,111 @@
-import getLocalStorage from "./localStorage";
+import getLocalStorage from "./localStorage"
 
 const data = getLocalStorage();
-const index = getIndex();
 
 
 
+function addAPIData(data){
+    // const { edu , guarantor, profile, } = data;
+    
+    const personalInfo = [
+        {
+            top: "full Name",
+            bottom: `${data.profile.lastName} ${data.profile.firstName}`,
+        },
+        {
+            top: "Phone Number",
+            bottom: data.phoneNumber
+        },
+        {
+            top: "Email Address",
+            bottom: data.email 
+        },
+        {
+            top: ""
+        },
+        {
+            top: "BVN",
+            bottom: data.profile.bvn
+        },
+        {
+            top: "currency",
+            bottom: data.profile.currency
+        }
+    ]
+    
+    const education = [
+        {
+            top: "level of education",
+            bottom: data.education.level
+        },
+        {
+            top: "Employment status",
+            bottom: data.education.employmentStatus
+        },
+        {
+            top: "sector of employment",
+            bottom: data.education.sector
+        },
+        {
+            top: "Duration of employment",
+            bottom: data.education.duration
+        },
+        {
+            top: "office email",
+            bottom: data.education.officeEmail
+        },
+        {
+            top: "Monthly income",
+            bottom: `₦${data.education.monthlyIncome[0]} - ₦${data.education.monthlyIncome[0]}`
+        },
+        {
+            top: "loan repayment",
+            bottom: data.education.loanRepayment
+        }
+    ]
+    
+    const socials = [
+        {
+            top: "Twitter",
+            bottom: data.socials.twitter
+        },
+        {
+            top: "Facebook",
+            bottom: data.socials.facebook
 
-export const personalInfo = [
-    {
-        top: "full Name",
-        // bottom:  
-    },
-    {
-        top: "Phone Number",
-        bottom: ""
-    },
-    {
-        top: "Email Address",
-        bottom: ""
-    },
-    {
-        top: "Bvn",
-        bottom: ""
-    },
-    {
-        top: "Marital status",
-        bottom: ""
-    },
-    {
-        top: "Children",
-        bottom: ""
-    },
-    {
-        top: "Type of residence",
-        bottom: ""
+        },
+        {
+            top: "Instagram",
+            bottom: data.socials.instagram
+        }
+    ]
+    
+    const guarantor = [
+        {
+            top: "full Name",
+            bottom: `${data.guarantor.lastName} ${data.guarantor.firstName} `
+        },
+        {
+            top: "Phone Number",
+            bottom: data.guarantor.phoneNumber
+        },
+        {
+            top: "Address",
+            bottom: data.guarantor.address
+        },
+        {
+            top: "Gender",
+            bottom: data.guarantor.gender
+        }
+    ]
+
+    return {
+        personalInfo,
+        education,
+        socials,
+        guarantor
     }
-]
 
-export const education = [
-    {
-        top: "level of education",
-        bottom: ""
-    },
-    {
-        top: "employment status",
-        bottom: ""
-    },
-    {
-        top: "sector of employment",
-        bottom: ""
-    },
-    {
-        top: "Duration of employment",
-        bottom: ""
-    },
-    {
-        top: "office email",
-        bottom: ""
-    },
-    {
-        top: "Monthly income",
-        bottom: ""
-    },
-    {
-        top: "loan repayment",
-        bottom: ""
-    }
-]
+}
 
-export const socials = [
-    {
-        top: "Twitter",
-        bottom: ""
-    },
-    {
-        top: "Facebook",
-        bottom: ""
-    },
-    {
-        top: "Instagram",
-        bottom: ""
-    }
-]
-
-export const guarantor = [
-    {
-        top: "full Name",
-        bottom: ""
-    },
-    {
-        top: "Phone Number",
-        bottom: ""
-    },
-    {
-        top: "Address",
-        bottom: ""
-    },
-    {
-        top: "Gender",
-        bottom: ""
-    }
-]
+export default addAPIData;

@@ -4,7 +4,7 @@
     text-decoration: none;
 
     & img {
-        width: 2.5rem;
+        width: 1.8rem;
     }
 
     & p {
@@ -18,7 +18,6 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 1.8rem;
-    background-color: #fff;
 
 
     & h1 {
@@ -86,7 +85,6 @@
        }
 
         & .user_id {
-            width: calc($value + 1rem);
 
                 & h3 {
                     color: #545f7df6;
@@ -158,27 +156,27 @@
         display: flex;
         justify-content: space-between;
         position: relative;
-        bottom: 10%;
-
-
-
+        
+        
         & h3 {
             position: relative;
+            bottom: .2rem;
             font-size: 1rem;
             color: rgba(0, 0, 0, 0.674);
             font-weight: 500;
+            cursor: pointer;
             
             &.active::after {
                 content:  "";
                 position: absolute;
-                left: 0;
-                bottom: -.7rem;
-                width: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -1rem;
+                width: 130%;
                 height: .2rem;
                 background-color: #39CDCC;
                 border-radius: .2rem ;
             }
-
         }
     }
 
@@ -188,7 +186,6 @@
 
 .user_info {
     border-radius: 8px;
-    padding: 1rem;
     margin-top: 2rem;
     margin-bottom: 3rem;
     padding: 0 2rem;
@@ -197,13 +194,14 @@
 
     & > div {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); //as the screen size decreases the size of the box  increases until it reaches 10rem
-        column-gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); //as the screen size decreases the size of the box  increases until it reaches 10rem
+        // column-gap: 1.5rem;
+        // grid-template-columns: .8fr .8fr 1fr .8fr ;
         grid-row: auto; 
         justify-content: center;
         grid-auto-rows: auto;
         row-gap: 2rem;
-        padding: 0rem .5rem 2rem;
+        padding: 0rem 1rem 2rem .5rem;
         border-bottom: 1px solid rgba(33, 64, 125, 0.189);
 
         &:last-child {
@@ -221,6 +219,7 @@
         }
 
         & .info {
+            width: fit-content;
 
             & .top{
                 color: #3d4559a8;
@@ -235,7 +234,7 @@
                 font-family: "WorkSans";
                 font-weight: 600;
                 color: #545F7D;
-
+                word-wrap: wrap;
 
             }
         }
