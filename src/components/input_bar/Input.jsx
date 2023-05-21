@@ -1,6 +1,14 @@
+import { useState, forwardRef } from "react";
 import "./styles.scss";
 
-function Input(props) {
+
+
+const Input = forwardRef((props, ref) =>{
+	const [value, setValue] = useState("");
+    
+    const handleChange = (e) => {
+        setValue(e.currentTarget.value)
+    };
 	return (
 		<div>
 			<label className="input_label" htmlFor={props.label}>{props.label}</label>
@@ -8,8 +16,11 @@ function Input(props) {
 				type={props.type}
 				id={props.label}
 				placeholder={props.label}
+				value={value}
+				ref={ref}
+				onChange={handleChange}
 			/>
 		</div>
 	);
-}
+})
 export default Input;

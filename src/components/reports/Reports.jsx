@@ -4,9 +4,9 @@ import Sorter from "../sorter/Sorter";
 import { useEffect, useState } from "react";
 import useVisibility from "../../hooks/useVisibility";
 import getLocalStorage from "../../utils/localStorage";
+import NoUser from "../no_user/NoUser";
 
-
-function Reports({ lenders }) {
+function Reports({ shownLenders }) {
 	return (
 		<div className="reports">
 			<div className="reports_title">
@@ -35,18 +35,22 @@ function Reports({ lenders }) {
 					<img src="/svg/filter.svg" alt="organization" />
 				</div>
 			</div>	
-			{lenders.map((lender, i) => (
-				<UserReport 
-					key={i}
-					organization={lender.orgName}
-					name={lender.userName}
-					email={lender.email}
-					tel={lender.phoneNumber}
-					date={lender.createdAt}
-					status={lender.status}
-					id={lender.id}
-				/>
-			))}
+			{
+				shownLenders.length? 
+				shownLenders.map((lender, i) => (
+					<UserReport 
+						key={i}
+						organization={lender.orgName}
+						name={lender.userName}
+						email={lender.email}
+						tel={lender.phoneNumber}
+						date={lender.createdAt}
+						status={lender.status}
+						id={lender.id}
+						position={i}
+					/>
+				)) : <NoUser />
+			}
             <Sorter />
 		</div>
 	);

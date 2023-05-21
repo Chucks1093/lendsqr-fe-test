@@ -7,25 +7,24 @@ import blackListUser from "../../utils/blackListUser";
 
 
 function DetailsModal({ id }) {
-	const { setUserStatus} = useContext(StatusContext);
-	console.log(setUserStatus)
+	const { setUserStatus , setLenders } = useContext(StatusContext);
 	return (
-		<div className="details_modal">
+		<div id="details_modal" className="details_modal">
 			<Link to={`/dashboard/details/${id}`}>
 				<div>
 					<img src="/svg/eye.svg" alt="eye_icon" />
 					<p>View Details</p>
 				</div>
 			</Link>
-			<div onClick={(e)=>blackListUser(setUserStatus, e)}>
+			<div onClick={(e)=>blackListUser(setUserStatus,setLenders, e)}>
 				<img src="/svg/blacklist_user.svg" alt="blacklist_users" />
 				<p>Blacklist User</p>
 			</div>
-			<div onClick={(e)=>activateUser(setUserStatus, e)}>
+			<div onClick={(e)=>activateUser(setUserStatus,setLenders, e)}>
 				<img src="/svg/activate_user.svg" alt="active_user" />
 				<p>Activate User</p>
 			</div>
-		</div>
+		</div>	
 	);
 }
 export default DetailsModal;

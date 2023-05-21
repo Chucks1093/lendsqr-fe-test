@@ -6,17 +6,17 @@ function useVisibility(id) {
 		setVisibility(true);
 	};
 	const hideVisiblity = (e) => {
-		console.log("clicked the screen")
 		setVisibility(false)
 	};	
 
 	useEffect(()=>{
 		const handleOutsideClick = (e)=>{
-			if (!e.target.closest(".details_modal")) {
+			const targetElement = !!document.getElementById("details_modal");
+			if (targetElement && !e.target.closest(".details_modal")) {
 				hideVisiblity();
 			} 
-			if (e.target.id == id) {
-				console.log("show details modad")
+			if (e.target.id == id ) {
+				console.log(e.target.parentElement.parentElement)
 				showVisibility();
 			}
 		}

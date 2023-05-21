@@ -4,10 +4,18 @@ import Reports from "../../components/reports/Reports";
 import { Fragment, useState } from "react";
 import useLenders from "../../hooks/useLenders";
 import StatusContext from "../../context/StatusContext";
+import getLocalStorage from "../../utils/localStorage";
 
 function UserPage() {
-	const { lenders, showNextLenders, showPrevLenders, setUserStatus } =useLenders();
-
+	const {
+		lenders,
+		setLenders,
+		showFirstLenders,
+		showNextLenders,
+		showPrevLenders,
+		setUserStatus,
+	} = useLenders();
+	// const data = getLocalStorage();
 	return (
 		<Fragment>
 			<h1 className="page_title">Users</h1>
@@ -37,8 +45,10 @@ function UserPage() {
 					metrics={"102,453"}
 				/>
 			</div>
-			<StatusContext.Provider value={{ setUserStatus }}>
-				<Reports lenders={lenders} />
+			<StatusContext.Provider
+				value={{ setUserStatus, showFirstLenders, setLenders}}
+			>
+				<Reports shownLenders={lenders.shownData} />
 			</StatusContext.Provider>
 			<div className="user_options">
 				<div className="show_users">

@@ -9,7 +9,6 @@ function UserReport(props) {
 	const { showVisibility, visibility } = useVisibility(props.id);
 
 
-
 	return (
 		<div  className="user_report">
 			<p className="org">{props.organization}</p>
