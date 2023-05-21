@@ -15,7 +15,6 @@ function UserPage() {
 		showPrevLenders,
 		setUserStatus,
 	} = useLenders();
-	// const data = getLocalStorage();
 	return (
 		<Fragment>
 			<h1 className="page_title">Users</h1>

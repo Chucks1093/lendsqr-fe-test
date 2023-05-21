@@ -11,12 +11,12 @@ function useVisibility(id) {
 
 	useEffect(()=>{
 		const handleOutsideClick = (e)=>{
-			const targetElement = !!document.getElementById("details_modal");
-			if (targetElement && !e.target.closest(".details_modal")) {
+			const detailsModal = !!document.getElementById("details_modal");
+			const filterModal = !!document.getElementById("sorter");
+			if (detailsModal && !e.target.closest(".details_modal") || filterModal && !e.target.closest("#sorter")) {
 				hideVisiblity();
 			} 
 			if (e.target.id == id ) {
-				console.log(e.target.parentElement.parentElement)
 				showVisibility();
 			}
 		}

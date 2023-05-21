@@ -1,5 +1,5 @@
 import "./styles.scss";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Selector from "../Selector/Selector";
 import Input from "../input_bar/Input";
 import getLocalStorage from "../../utils/localStorage";
@@ -59,7 +59,6 @@ function Sorter() {
 		const filteredData = getFilteredArray(newObj, data);
 		setLenders(() => {
 			const newArr = filteredData.slice(0, 10);
-			console.log({ shownData: newArr, data: filteredData });
 			return {
 				shownData: newArr,
 				data: filteredData,
@@ -69,7 +68,7 @@ function Sorter() {
 	};
 
 	return (
-		<form onSubmit={filterUser} className="sorter">
+		<form  id="sorter" onSubmit={filterUser} className="sorter">
 			<Selector
 				label={"organization"}
 				options={organizations}
@@ -95,7 +94,6 @@ function Sorter() {
 				type="date"
 				value={inputValue.date}
 				setInputValue={setInputValue}
-
 			/>
 			<Input
 				label={`phone Number`}

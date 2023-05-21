@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import getLocalStorage from "../utils/localStorage";
 import getFilteredArray from "../utils/getFilteredArray";
-
+	
 function useLenders() {
-	const data = getLocalStorage()
 	const [lenders, setLenders] = useState({
 		shownData: getLocalStorage(),
 		data: getLocalStorage()
