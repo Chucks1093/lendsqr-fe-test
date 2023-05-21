@@ -13,7 +13,6 @@ function useLenders() {
 
 	useEffect(()=>{
 		setLenders((value)=> {
-			console.log(value.data.length)
 			const data = getLocalStorage();
 			if (value.data.length === data.length) {
 				return {

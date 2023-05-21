@@ -1,13 +1,16 @@
 import "./styles.scss";
-import { useState, forwardRef } from "react";
 
 
-
-const Selector = forwardRef((props, ref) =>{
-    const [value, setValue] = useState("");
+function Selector(props){
     
     const handleChange = (e) => {
-        setValue(e.currentTarget.value)
+        const newWord = props.label.replace(/\s/g, '');
+        props.setInputValue((value)=> {
+            return {
+                ...value,
+                [newWord] : e.target.value
+            }
+        })
     };
     
     return (
@@ -16,8 +19,7 @@ const Selector = forwardRef((props, ref) =>{
             <select
                 className={"selector"}
                 id={props.label}
-                value={value}
-                ref={ref}
+                value={props.value}
                 onChange={handleChange}
             > 
                 <option className="default_option" value="" disabled>Select</option>
@@ -28,5 +30,5 @@ const Selector = forwardRef((props, ref) =>{
         </div>
     );
 
-})
+}
 export default Selector;

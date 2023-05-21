@@ -7,11 +7,6 @@ function activateUser(setData,setLenders, e) {
 	const userCurrentStatus = allData[id].status;
 	allData[id].status = userCurrentStatus == "blacklisted"? "active" : userCurrentStatus;
 	localStorage.setItem("users", JSON.stringify(allData));
-	// setLenders((value)=>{
-	// 	return {
-	// 		...
-	// 	}
-	// });
 	setData((value)=>!value);
 };
 
