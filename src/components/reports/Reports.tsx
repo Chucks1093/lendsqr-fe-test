@@ -35,7 +35,6 @@ function Reports({ shownLenders }) {
 						date={lender.createdAt}
 						status={lender.status}
 						id={lender.id}
-						position={i}
 					/>
 				))
 			) : (

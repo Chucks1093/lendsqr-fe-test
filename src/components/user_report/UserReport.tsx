@@ -2,7 +2,6 @@ import "./styles.scss";
 import useVisibility from "../../hooks/useVisibility";
 import dateFormatter from "../../utils/dateFormatter";
 import DetailsModal from "../user_modal/detailsModal";
-import { useEffect } from "react";
 
 function UserReport(props) {
 	const formattedDate = dateFormatter(props.date);

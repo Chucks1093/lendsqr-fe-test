@@ -6,7 +6,7 @@ import UserDetails from "./pages/user_details/UserDetails";
 import "./App.scss";
 
 	
-function App() {
+function App():JSX.Element {
 
 	return (
 		<BrowserRouter>

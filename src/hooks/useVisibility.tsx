@@ -13,7 +13,7 @@ function useVisibility(id) {
 		const handleOutsideClick = (e)=>{
 			const detailsModal = !!document.getElementById("details_modal");
 			const filterModal = !!document.getElementById("sorter");
-			if (detailsModal && !e.target.closest(".details_modal") || filterModal && !e.target.closest("#sorter")) {
+			if ((detailsModal && !e.target.closest(".details_modal")) || (filterModal && !e.target.closest("#sorter"))) {
 				hideVisiblity();
 			} 
 			if (e.target.id == id ) {

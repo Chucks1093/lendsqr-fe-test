@@ -57,7 +57,6 @@
     border-radius: 8px;
     background-color: #fff;
     $value: 7.5rem;
-    
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.06);
 
 
@@ -117,8 +116,6 @@
 
             }
 
-    
-
             & .star {
                 width: .9rem;
 
@@ -127,7 +124,6 @@
                 }
 
             }
-            // margin: 0rem 1.5rem;
             
         }
 
@@ -198,12 +194,12 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); //as the screen size decreases the size of the box  increases until it reaches 10rem
         // column-gap: 1.5rem;
-        grid-template-columns: .8fr .8fr 1fr .8fr ;
+        // grid-template-columns: .8fr .8fr 1fr .8fr ;
         grid-row: auto; 
         justify-content: center;
         grid-auto-rows: auto;
         row-gap: 2.7rem;
-        padding: 0rem 1rem 2rem .5rem;
+        padding: 0rem 1rem 2rem .8rem;
         border-bottom: 1px solid rgba(33, 64, 125, 0.189);
 
         &:last-child {
