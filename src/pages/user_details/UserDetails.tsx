@@ -1,25 +1,27 @@
-import { Fragment, useEffect, useLayoutEffect } from "react";
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./styles.scss";
 import getLocalStorage from "../../utils/localStorage";
 import { useParams } from "react-router-dom";
 import Section from "../../components/user_details_section/Section";
 import addAPIData from "../../utils/userDetails";
+import UserData from "../../types/UserData";
 
-function UserDetails(props) {
-	let userData = getLocalStorage();
-    let { userID }= useParams();
-	userID = userID - 1;
+function UserDetails()  {
+	const userData: UserData[] = getLocalStorage();
+    let { userID } : { userID? : number}  = useParams();
+	userID = (userID ?? 0) - 1;
 	const profile = addAPIData(userData[userID])
 	const {firstName, lastName} = userData[userID].profile;
+
 	const activateUser =()=> {
-		const userStatus = userData[userID].status;
-		userData[userID].status = userStatus == "blacklisted" ? "active" : userStatus;
+		const userStatus = userData[(userID ?? 0)].status;
+		userData[(userID ?? 0)].status = userStatus == "blacklisted" ? "active" : userStatus;
 		localStorage.setItem("users", JSON.stringify(userData));
 	};
-	const blackListUser =() => {
-		const userStatus = userData[userID].status;
-		userData[userID].status = userStatus == "active" ? "blacklisted" : userStatus;
+	const blackListUser =()=> {
+		const userStatus = userData[(userID ?? 0)].status;
+		userData[(userID ?? 0)].status = userStatus == "active" ? "blacklisted" : userStatus;
 		localStorage.setItem("users", JSON.stringify(userData));
 	}
 	

@@ -3,17 +3,19 @@ import UserReport from "../user_report/UserReport";
 import Sorter from "../sorter/Sorter";
 import NoUser from "../no_user/NoUser";
 import useVisibility from "../../hooks/useVisibility";
+import UserData from "../../types/UserData";
 
-function Reports({ shownLenders }) {
+const reportColumns = [
+	"organization",
+	"username",
+	"email",
+	"phone number",
+	"date joined",
+	"status",
+];
+
+function Reports({ shownLenders } : { shownLenders: UserData[] }) {
 	const { visibility, showVisibility } = useVisibility("filter_img");
-	const reportColumns = [
-		"organization",
-		"username",
-		"email",
-		"phone number",
-		"date joined",
-		"status",
-	];
 	return (
 		<div className="reports">
 			<div className="reports_title">
@@ -29,12 +31,12 @@ function Reports({ shownLenders }) {
 					<UserReport
 						key={i}
 						organization={lender.orgName}
-						name={lender.userName}
+						username={lender.userName}
 						email={lender.email}
-						tel={lender.phoneNumber}
+						phoneNumber={lender.phoneNumber}
 						date={lender.createdAt}
 						status={lender.status}
-						id={lender.id}
+						id={Number(lender.id)}
 					/>
 				))
 			) : (

@@ -1,6 +1,6 @@
 import months from "./months";
 
-function dateFormatter(prop) {
+function dateFormatter(prop: string) {
 	const date = new Date(prop);
 	const formattedTime = date.toLocaleTimeString();
 	const day = date.getDay();

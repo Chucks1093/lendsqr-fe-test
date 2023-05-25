@@ -1,22 +1,27 @@
 import { useEffect, useState } from "react";
 
-function useVisibility(id) {
+type IDType = string | number ;
+
+function useVisibility(id : IDType ) {
 	const [visibility, setVisibility] = useState(false);
 	const showVisibility = () => {
 		setVisibility(true);
 	};
-	const hideVisiblity = (e) => {
+	const hideVisiblity = () => {
 		setVisibility(false)
 	};	
 
 	useEffect(()=>{
-		const handleOutsideClick = (e)=>{
+		const handleOutsideClick = (e: Event )=>{
 			const detailsModal = !!document.getElementById("details_modal");
 			const filterModal = !!document.getElementById("sorter");
-			if ((detailsModal && !e.target.closest(".details_modal")) || (filterModal && !e.target.closest("#sorter"))) {
+			const targetElement = e.target;
+			if (
+				(detailsModal && !(targetElement instanceof Element && targetElement.closest(".details_modal"))) || 
+				(filterModal && !(targetElement instanceof Element && targetElement.closest("#sorter")))) {
 				hideVisiblity();
 			} 
-			if (e.target.id == id ) {
+			if (targetElement instanceof Element && targetElement.id == id ) {
 				showVisibility();
 			}
 		}
@@ -24,7 +29,7 @@ function useVisibility(id) {
 
 		return () => document.removeEventListener("click", handleOutsideClick);
 
-	}, [visibility]);
+	}, [visibility, id]);
 
 	return { visibility, showVisibility };
 }

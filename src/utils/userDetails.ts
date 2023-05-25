@@ -1,6 +1,6 @@
+import UserData from "../types/UserData"
 
-
-function addAPIData(data){
+function addAPIData(data : UserData){
     const personalInfo = [
         {
             top: "full Name",

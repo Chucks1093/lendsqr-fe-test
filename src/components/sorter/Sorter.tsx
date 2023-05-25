@@ -6,65 +6,65 @@ import getLocalStorage from "../../utils/localStorage";
 import { useContext } from "react";
 import StatusContext from "../../context/StatusContext";
 import getFilteredArray from "../../utils/getFilteredArray";
+import InputValue from "../../types/InputValue";
+import FilteredValue from "../../types/FileterdValue";
+
 
 function Sorter() {
-	const { setLenders, showFirstLenders } = useContext(StatusContext);
-	const [inputValue, setInputValue] = useState({
+	const context = useContext(StatusContext);
+	const setLenders = context?.setLenders;
+	const showFirstLenders = context?.showFirstLenders;
+	const [inputValue, setInputValue] = useState<InputValue>({
 		organization: "",
 		username: "",
 		email: "",
 		date: "",
 		phoneNumber: "",
-		status: "",
+		status: undefined,
 	});
 	
 	const data = getLocalStorage();
 	const organizations = [...new Set(data.map((ele) => ele.orgName))];
 	const status = [...new Set(data.map((ele) => ele.status))];
 
-	const resetForm = (e) => {
-		e.preventDefault();
-		setInputValue(()=> {
+	const resetForm = () => {
+		setInputValue((): InputValue => {
 			return {
 				organization: "",
 				username: "",
 				email: "",
-				date: "",
+				date: "",				
 				phoneNumber: "",
-				status: ""
+				status: undefined  
 			}
 		})
-		setLenders(() => {
-			return {
-				shownData: data.slice(0, 10),
-				data: data,
-			};
+		setLenders?.({
+			shownData: data.slice(0, 10),
+			data: data,
 		});
-		showFirstLenders();
+		showFirstLenders?.();
 	};
 
-	const filterUser = (e) => {
+	const filterUser = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		const obj = {
+		const obj: Partial<FilteredValue> = {
 			orgName: inputValue.organization,
 			userName: inputValue.username,
 			email: inputValue.email,
 			createdAt: inputValue.date,
 			phoneNumber:inputValue.phoneNumber,
-			status: inputValue.status,
+			status: inputValue.status ,
 		};
-		const newObj = Object.fromEntries(
-			Object.entries(obj).filter(([key, value]) => value !== "")
+		const newObj : Partial<FilteredValue> = Object.fromEntries(
+			Object.entries(obj).filter((value) => value[1] !== "")
 		);
 		const filteredData = getFilteredArray(newObj, data);
-		setLenders(() => {
-			const newArr = filteredData.slice(0, 10);
-			return {
-				shownData: newArr,
-				data: filteredData,
-			};
+		const newArr = filteredData.slice(0, 10);
+		setLenders?.({
+			shownData: newArr,
+			data: filteredData,
 		});
-		showFirstLenders();
+		showFirstLenders?.();
 	};
 
 	return (

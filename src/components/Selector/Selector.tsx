@@ -1,14 +1,21 @@
 import "./styles.scss";
+import InputValue from "../../types/InputValue";
 
+type SelectorProps = {
+    label: string;
+    options: string[];
+    value: string | undefined;
+    setInputValue: React.Dispatch<React.SetStateAction<InputValue>>
+}
 
-function Selector(props){
+function Selector(props: SelectorProps){
     
-    const handleChange = (e) => {
-        const newWord = props.label.replace(/\s/g, '');
+    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const property = props.label.replace(/\s/g, '');
         props.setInputValue((value)=> {
             return {
                 ...value,
-                [newWord] : e.target.value
+                [property] : e.target.value
             }
         })
     };

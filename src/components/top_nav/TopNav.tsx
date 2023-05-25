@@ -1,9 +1,8 @@
-import { Fragment } from "react";
 import "./styles.scss";
 
-function TopNav() {
+function TopNav() : React.ReactElement{
 	return (
-        <header  className="header">
+        <header className="header">
             <div className="dashboard_logo">
                 <img src="/logo.svg" alt="lendsqr" />
                 <span>lendsqr</span>
@@ -24,5 +23,5 @@ function TopNav() {
         </header>
 
     );
-};
+}
 export default TopNav;

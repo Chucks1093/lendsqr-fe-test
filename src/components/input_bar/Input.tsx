@@ -1,7 +1,17 @@
 import "./styles.scss";
+import InputValue from "../../types/InputValue";
 
-function Input(props) {
-	const handleChange = (e) => {
+
+type InputProps = {
+	label: string;
+	type: string;
+	value: string;
+	setInputValue: React.Dispatch<React.SetStateAction<InputValue>>
+}
+
+
+function Input(props: InputProps) {
+	const handleChange = (e:React.ChangeEvent<HTMLInputElement> ) => {
 		const property = props.label.replace(/\s/g, '');
 		props.setInputValue((value)=> {
             return {

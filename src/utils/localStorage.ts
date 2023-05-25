@@ -1,7 +1,8 @@
 import getData from "../services/api";
+import UserData from "../types/UserData";
 
 function getLocalStorage() {
-    const data = localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : getData();
+    const data: UserData[] = localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users") as string): getData();
     return data;
 }
 

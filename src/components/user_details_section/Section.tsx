@@ -1,5 +1,13 @@
 
-function Section(props) {
+type SectionProps ={
+	title: string;
+	data: {
+		top: string;
+		bottom: string;
+	}[]
+}
+
+function Section(props : SectionProps) {
 	
 	return (
 		<div>

@@ -6,7 +6,6 @@ import useLenders from "../../hooks/useLenders";
 import StatusContext from "../../context/StatusContext";
 
 
-
 function UserPage() {
 	const {
 		lenders,
@@ -14,12 +13,12 @@ function UserPage() {
 		showFirstLenders,
 		showNextLenders,
 		showPrevLenders,
-		setUserStatus,
+		updateUserStatus
 	} = useLenders();
 	const dataBatch = Math.floor(lenders.data.length / 10);
 	const newArr = new Array(dataBatch)
 		.fill("#")
-		.map((ele, i) => (ele = i + 1));
+		.map((ele, i) => ele = i + 1);
 	console.log(newArr);
 	return (
 		<Fragment>
@@ -51,7 +50,7 @@ function UserPage() {
 				/>
 			</div>
 			<StatusContext.Provider
-				value={{ setUserStatus, showFirstLenders, setLenders }}
+				value={{ updateUserStatus, showFirstLenders, setLenders }}
 			>
 				<Reports shownLenders={lenders.shownData} />
 			</StatusContext.Provider>

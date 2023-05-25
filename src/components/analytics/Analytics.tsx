@@ -1,7 +1,14 @@
 import "./styles.scss";
 
 
-function Analytics(props) {
+type AnalyticsProps = {
+    image: string;
+    title: string;
+    color: string;
+    metrics: string;
+}
+
+function Analytics(props: AnalyticsProps) {
 	return (
         <div className="analytics">
             <div className="img_bg" style={{backgroundColor: `${props.color}` }}>
@@ -11,5 +18,5 @@ function Analytics(props) {
             <span>{props.metrics}</span>
         </div>
     );
-};
+}
 export default Analytics;

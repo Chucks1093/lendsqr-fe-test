@@ -1,7 +1,14 @@
 import { NavLink } from "react-router-dom";
 import "./styles.scss";
+import { ReactElement } from "react";
 
-function MenuOptions(props) {
+type MenuOptionsProps = {
+	name: string;
+	icon: string;
+	list?: boolean;
+}
+
+function MenuOptions(props: MenuOptionsProps): ReactElement {
 	return (
 		<NavLink to="/dashboard" className="menu_options">
 			<img
