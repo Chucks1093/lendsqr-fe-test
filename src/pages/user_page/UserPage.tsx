@@ -5,9 +5,11 @@ import { Fragment } from "react";
 import useLenders from "../../hooks/useLenders";
 import StatusContext from "../../context/StatusContext";
 import Pagination from "../../components/pagination/Pagination";
+import getLocalStorage from "../../utils/localStorage";
 
 
 function UserPage() {
+	const allUsers = getLocalStorage();
 	const {
 		lenders,
 		currentPage,
@@ -56,11 +58,9 @@ function UserPage() {
 				<div className="show_users">
 					<p>Showing</p>
 					<select name="" id="">
-						{lenders.data.map((info)=> (
-							<option>{info.id}</option>
-						))}
+						<option>{lenders.data.length}</option>
 					</select>
-					<p>{`out of ${lenders.data.length}`}</p>
+					<p>{`out of ${allUsers.length}`}</p>
 				</div>
 				<Pagination 
 					currentPage={currentPage}
