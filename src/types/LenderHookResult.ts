@@ -12,6 +12,8 @@ interface LendersHookResult {
 			data: UserData[];
 		}>
 	>;
+	currentPage: number;
+	handlePageClick: (pageNumber: number) => void;
 	showNextLenders: () => void;
 	showFirstLenders: () => void;
 	showPrevLenders: () => void;

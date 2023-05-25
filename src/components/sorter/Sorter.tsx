@@ -20,7 +20,7 @@ function Sorter() {
 		email: "",
 		date: "",
 		phoneNumber: "",
-		status: undefined,
+		status: ""
 	});
 	
 	const data = getLocalStorage();
@@ -28,14 +28,15 @@ function Sorter() {
 	const status = [...new Set(data.map((ele) => ele.status))] as const;
 
 	const resetForm = () => {
-		setInputValue((): InputValue => {
+		setInputValue((value)=>{
 			return {
+				...value,
 				organization: "",
 				username: "",
 				email: "",
 				date: "",				
 				phoneNumber: "",
-				status: undefined  
+				status: ""
 			}
 		})
 		setLenders?.({
@@ -43,6 +44,7 @@ function Sorter() {
 			data: data,
 		});
 		showFirstLenders?.();
+		console.log(inputValue.status)
 	};
 
 	const filterUser = (e: React.FormEvent<HTMLFormElement>) => {
@@ -109,7 +111,7 @@ function Sorter() {
 
 			/>
 			<div className="button_cover">
-				<button onClick={resetForm} className="reset_btn" type="reset">
+				<button onClick={resetForm} className="reset_btn" type="button">
 					Reset
 				</button>
 				<button className="filter_btn" type="submit">

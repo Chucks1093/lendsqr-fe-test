@@ -4,22 +4,20 @@ import Reports from "../../components/reports/Reports";
 import { Fragment } from "react";
 import useLenders from "../../hooks/useLenders";
 import StatusContext from "../../context/StatusContext";
+import Pagination from "../../components/pagination/Pagination";
 
 
 function UserPage() {
 	const {
 		lenders,
+		currentPage,
+		handlePageClick,
 		setLenders,
 		showFirstLenders,
 		showNextLenders,
 		showPrevLenders,
 		updateUserStatus
 	} = useLenders();
-	const dataBatch = Math.floor(lenders.data.length / 10);
-	const newArr = new Array(dataBatch)
-		.fill("#")
-		.map((_, i) => i + 1);
-	console.log(newArr);
 	return (
 		<Fragment>
 			<h1 className="page_title">Users</h1>
@@ -28,22 +26,22 @@ function UserPage() {
 					image="allusers"
 					title={"USERS"}
 					metrics={"2,453"}
-					color={"rgba(223, 24, 255, 0.1)"}
+					color={"rgba(224, 24, 255, 0.1)"}
 				/>
 				<Analytics
-					color={"rgb(87, 24, 255, 0.1)"}
+					color={"rgba(87, 24, 255, 0.1)"}
 					image="activeusers"
 					title={"ACTIVE USERS"}
 					metrics={"2,453"}
 				/>
 				<Analytics
-					color={"rgb(245, 95, 68, 0.1)"}
+					color={"rgba(245, 95, 68, 0.1)"}
 					image={"loans_user"}
 					title={"USERS WITH LOAN"}
 					metrics={"2,543"}
 				/>
 				<Analytics
-					color={"rgb(255, 51, 102, 0.1)"}
+					color={"rgba(255, 51, 102, 0.1)"}
 					image={"savings_user"}
 					title={"USERS WITH SAVINGS"}
 					metrics={"102,453"}
@@ -58,23 +56,19 @@ function UserPage() {
 				<div className="show_users">
 					<p>Showing</p>
 					<select name="" id="">
-						<option value="">2</option>
-						<option value="">2</option>
-						<option value="">222</option>
-						<option value="">22wf</option>
+						{lenders.data.map((info)=> (
+							<option>{info.id}</option>
+						))}
 					</select>
 					<p>{`out of ${lenders.data.length}`}</p>
 				</div>
-				<div className="more_users">
-					<button onClick={showPrevLenders}>
-						<img src="/svg/arrow_left.svg" alt="" />
-					</button>
-					
-
-					<button onClick={showNextLenders}>
-						<img src="/svg/arrow_right.svg" alt="" />
-					</button>
-				</div>
+				<Pagination 
+					currentPage={currentPage}
+					userData={lenders} 
+					next={showNextLenders}
+					back={showPrevLenders}
+					handlePageClick={handlePageClick}
+				/>
 			</div>
 		</Fragment>
 	);

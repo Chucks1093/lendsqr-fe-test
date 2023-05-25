@@ -35,3 +35,19 @@ src/
 └── ...
 
 
+- my-project/
+  - src/
+    - index.md
+    - styles/
+      - main.css
+  - docs/
+    - README.md
+    - guide/
+      - installation.md
+      - usage.md
+  - assets/
+    - images/
+      - logo.png
+    - videos/
+      - intro.mp4
+  - LICENSE

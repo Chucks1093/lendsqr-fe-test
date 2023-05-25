@@ -1,0 +1,56 @@
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	& button {
+		width: 1.8rem;
+		height: 1.8rem;
+		display: grid;
+		place-items: center;
+		border: none;
+		color: #21407d70;
+		background-color: rgba(84, 95, 125, 0.137);
+		cursor: pointer;
+		border-radius: 0.2rem;
+
+		&:hover {
+			background-color: rgba(84, 95, 125, 0.082);
+		}
+		&.move:active {
+			background-color: rgba(84, 95, 125, 0.397);
+		}
+		& img {
+			width: 0.4rem;
+		}
+	}
+
+    & .page_number_container {
+        display: flex;
+        justify-content: flex-start;
+		margin: 0 .6rem;
+    }
+
+
+    & span {
+        color: rgba(56, 64, 85, 0.623);
+        display: block;
+		padding: .3rem .6rem;
+		border-radius: .3rem;
+		cursor: pointer;
+
+		&:hover {
+			background-color: rgba(74, 83, 104, 0.089);
+		}
+		&:active {
+			background-color: rgba(74, 83, 104, 0.212);
+		}
+
+		&.active {
+			color: rgba(224, 24, 255, 0.192);
+			color: rgb(56, 64, 85);
+			font-weight: 600;
+
+		}
+    }
+}

@@ -9,11 +9,14 @@ function useLenders(): LendersHookResult {
 		data: getLocalStorage(),
 	});
 	const [{ start, end }, setIndex] = useState({ start: 0, end: 10 });
+	const [currentPage, setCurrentPage] = useState(1);
+
 
 	const updateUserStatus = useCallback(() => {
 		setLenders((value) => {
 			const data = getLocalStorage();
 			if (value.data.length === data.length) {
+				console.log("I updated status --1")
 				return {
 					...value,
 					shownData: data.slice(start, end),
@@ -27,6 +30,7 @@ function useLenders(): LendersHookResult {
 					: data;
 				const refreshedData = getFilteredArray(obj, data);
 				const newArr = refreshedData.slice(start, end);
+				console.log("I updated status --2")
 				return {
 					...value,
 					shownData: newArr,
@@ -38,17 +42,32 @@ function useLenders(): LendersHookResult {
 
 	useEffect(() => {
 		updateUserStatus();
-	}, [updateUserStatus]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	const showFirstLenders = () => {
 		setIndex({ start: 0, end: 10 });
+		setCurrentPage(1);
 	};
+
+	const handlePageClick = (pageNumber: number) => {
+		setCurrentPage(pageNumber);
+		const slicedIndex = pageNumber * 10;
+		setIndex({start: slicedIndex - 10  , end:slicedIndex});
+		setLenders((value) => {
+			const newArr = value.data.slice(slicedIndex-10, slicedIndex);
+			return {
+				...value,
+				shownData: newArr
+			}
+		})
+	}
 
 	const showNextLenders = () => {
 		setLenders((value) => {
-			console.log(value.data.length);
 			if (end >= value.data.length) return { ...value };
 			const newArr = value.data.slice(start + 10, end + 10);
+			setCurrentPage(currentPage + 1);
 			setIndex({ start: start + 10, end: end + 10 });
 			return {
 				...value,
@@ -61,6 +80,7 @@ function useLenders(): LendersHookResult {
 		setLenders((value) => {
 			if (start <= 0) return { ...value };
 			const newArr = value.data.slice(start - 10, end - 10);
+			setCurrentPage(currentPage - 1);
 			setIndex({ start: start - 10, end: end - 10 });
 			return {
 				...value,
@@ -71,6 +91,8 @@ function useLenders(): LendersHookResult {
 
 	return {
 		lenders,
+		currentPage,
+		handlePageClick,
 		setLenders,
 		showNextLenders,
 		showFirstLenders,

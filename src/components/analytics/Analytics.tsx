@@ -1,10 +1,10 @@
 import "./styles.scss";
 
 
-type AnalyticsProps = {
-    image: string;
-    title: string;
-    color: string;
+interface AnalyticsProps  {
+    image: "allusers" | "activeusers" | "loans_user" | "savings_user";
+    title: Uppercase<string>;
+    color: `rgba(${string})`;
     metrics: string;
 }
 

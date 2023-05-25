@@ -4,7 +4,7 @@ interface InputValue<T = number>  {
 	email: string;
 	date: string;
 	phoneNumber: string;
-	status:  "active" | "inactive" | "blacklisted" | "pending"| undefined;
+	status:  "active" | "inactive" | "blacklisted" | "pending"| "";
     id? : T
 }
 

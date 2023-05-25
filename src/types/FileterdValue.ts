@@ -5,7 +5,7 @@ interface FilteredValue {
 	email: string;
 	createdAt: string;
 	phoneNumber: string;
-	status:  "active" | "inactive" | "blacklisted" | "pending";
+	status:  "active" | "inactive" | "blacklisted" | "pending"| "";
 }
 
 export default FilteredValue;
