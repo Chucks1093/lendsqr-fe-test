@@ -24,8 +24,8 @@ function Sorter() {
 	});
 	
 	const data = getLocalStorage();
-	const organizations = [...new Set(data.map((ele) => ele.orgName))];
-	const status = [...new Set(data.map((ele) => ele.status))];
+	const organizations = [...new Set(data.map((ele) => ele.orgName))] as const;
+	const status = [...new Set(data.map((ele) => ele.status))] as const;
 
 	const resetForm = () => {
 		setInputValue((): InputValue => {

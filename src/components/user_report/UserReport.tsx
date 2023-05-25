@@ -2,18 +2,9 @@ import "./styles.scss";
 import useVisibility from "../../hooks/useVisibility";
 import dateFormatter from "../../utils/dateFormatter";
 import DetailsModal from "../user_modal/detailsModal";
+import InputValue from "../../types/InputValue";
 
-type UserReportProps = {
-	organization: string;
-	username: string;
-	email: string;
-	phoneNumber: string;
-	date: string;
-	status: "active" | "inactive" | "blacklisted" | "pending";
-	id: number;
-};
-
-function UserReport(props: UserReportProps) {
+function UserReport(props: Required<InputValue>) {
 	const formattedDate = dateFormatter(props.date);
 	const { showVisibility, visibility } = useVisibility(props.id);
 

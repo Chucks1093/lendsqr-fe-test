@@ -18,7 +18,7 @@ function UserPage() {
 	const dataBatch = Math.floor(lenders.data.length / 10);
 	const newArr = new Array(dataBatch)
 		.fill("#")
-		.map((ele, i) => ele = i + 1);
+		.map((_, i) => i + 1);
 	console.log(newArr);
 	return (
 		<Fragment>

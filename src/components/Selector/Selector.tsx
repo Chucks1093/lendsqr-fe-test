@@ -3,7 +3,7 @@ import InputValue from "../../types/InputValue";
 
 type SelectorProps = {
     label: string;
-    options: string[];
+    options: readonly string[];
     value: string | undefined;
     setInputValue: React.Dispatch<React.SetStateAction<InputValue>>
 }
