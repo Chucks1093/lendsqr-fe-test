@@ -6,7 +6,7 @@ import "./styles.scss";
 
 function Dashboard() {
 	return (
-		<div className="dash_board">
+		<div id="dash_board" className="dash_board">
 			<TopNav />
 			<SideNav />	
 			<div className="out_let">

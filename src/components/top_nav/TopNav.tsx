@@ -1,6 +1,7 @@
 import "./styles.scss";
 
 function TopNav() : JSX.Element{
+    
 	return (
         <header className="header">
             <div  className="menu_bar">

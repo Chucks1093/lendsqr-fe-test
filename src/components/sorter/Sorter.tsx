@@ -55,7 +55,7 @@ function Sorter() {
 			email: inputValue.email,
 			createdAt: inputValue.date,
 			phoneNumber:inputValue.phoneNumber,
-			status: inputValue.status ,
+			status: inputValue.status,
 		};
 		const newObj : Partial<FilteredValue> = Object.fromEntries(
 			Object.entries(obj).filter((value) => value[1] !== "")

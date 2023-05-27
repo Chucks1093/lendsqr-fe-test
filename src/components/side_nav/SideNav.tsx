@@ -6,7 +6,7 @@ import { businesses, customers, settings } from "../../utils/navOptions";
 
 function SideNav() {
 	return (
-		<nav className="nav hide_bar" id="nav-bar">
+		<nav className="nav hide" id="nav-bar">
 			<UserInfo />
 
 			<MenuOptions name={"Swich Organization"} icon="briefcase" list />
@@ -41,9 +41,12 @@ function SideNav() {
 					/>
 				))}
 			</div>
-			<div className="log_out fixed">
+			<div className="log_out ">
+				<div className="fixed">
 					<MenuOptions link="/" name={"LogOut"} icon="log_out" />
 					<img className="bell"  src="/svg/bell.svg" alt="" />
+
+				</div>
 			</div>
 			<span className="version_number">v1.2.0</span>
 		</nav>

@@ -6,7 +6,7 @@ function UserInfo(){
             <div className="user_id_container">
                 <img src="creator.jpg" alt="" />
                 <div>
-                    <p>Adedeji S.</p>
+                    <p>Adedeji </p>
                     <a href="#">Docs</a>
                 </div>
             </div>
