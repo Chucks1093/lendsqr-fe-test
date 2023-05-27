@@ -1,9 +1,9 @@
 import "./styles.scss";
 
-function TopNav() : React.ReactElement<HTMLHeadingElement>{
+function TopNav() : JSX.Element{
 	return (
         <header className="header">
-            <div className="menu_bar">
+            <div id="menu-bar" className="menu_bar">
                 <img src="/svg/menu.svg" alt="" />
             </div>
             <div className="dashboard_logo">

@@ -6,7 +6,7 @@
 
 .analytics_container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); //as the screen size decreases the size of the box until it reaches 10rem
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); //as the screen size decreases the size of the box until it reaches 10rem
     column-gap: 1.5rem;
     grid-row: auto;
     justify-content: center;
@@ -15,7 +15,6 @@
     margin-top: 3rem;
     width: 100%;
     padding: 0 2rem 0;
-    
 };
 
 .user_options {
@@ -47,8 +46,6 @@
             border-radius: .2rem;
             border: none;
             background-color: #213F7D1A;
-
-
         }
     }
 }

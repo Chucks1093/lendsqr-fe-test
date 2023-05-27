@@ -47,16 +47,14 @@
         overflow-x: scroll;
         overflow-y: hidden;
         position: relative;
-        // border: 1px solid red;
     }
     .reports {
-        width: 180%;
-        max-width: 32rem;
+        min-width: 32rem;
         margin: 2rem 0 4rem;
     }
     .reports_title {
         width: 100%;
-        grid-template-columns: repeat(2, .9fr) .9fr;
+        grid-template-columns: repeat(3, .9fr) .9fr;
 
 
         & .report_filter {
