@@ -13,9 +13,9 @@ function UserReport(props: Required<InputValue>) {
 		<div  className="user_report">
 			<p className="org">{props.organization}</p>
 			<p className="lender_name">{props.username}</p>
-			<p>{props.email}</p>
+			<p className="email">{props.email}</p>
 			<p className="tel">{props.phoneNumber}</p>
-			<p>{formattedDate}</p>
+			<p className="date">{formattedDate}</p>
 			<div className="user_status">
 				<p className={`status ${props.status}`}>{props.status}</p>
 				<img onClick={showVisibility} id={`${props.id}`} className="more" src="/svg/more.svg" alt="more" />

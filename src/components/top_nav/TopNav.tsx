@@ -1,11 +1,13 @@
 import "./styles.scss";
 
-function TopNav() : React.ReactElement{
+function TopNav() : React.ReactElement<HTMLHeadingElement>{
 	return (
         <header className="header">
+            <div className="menu_bar">
+                <img src="/svg/menu.svg" alt="" />
+            </div>
             <div className="dashboard_logo">
                 <img src="/logo.svg" alt="lendsqr" />
-                <span>lendsqr</span>
             </div>
             <form className="dashboard_form" action="">
                 <input placeholder="Search for aanything" type="text" />

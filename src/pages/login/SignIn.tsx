@@ -1,12 +1,18 @@
-
 import "./styles.scss";
+import { Link } from "react-router-dom";
+import {useState} from "react"
 
 function SignIn() {
+	const [passwordVisibility, setPasswordVisibility] = useState(false);
+	const togglePasswordVisibility =() => {
+		setPasswordVisibility(!passwordVisibility);
+	}
 	return (
 		<>
-            <div className="login_logo">
-                <img src="logo.svg" alt="lendsqr" />
-                <span>lendsqr</span>
+            <div className="login_heading">
+				<div className="login_logo">
+					<img src="logo.svg" alt="lendsqr" />
+				</div>
             </div>
 			<div className="container">
 				<div className="login_image_container">
@@ -22,13 +28,14 @@ function SignIn() {
 						action="
                         "
 					>
-						<input type="text" placeholder="Email" />
+						<input type="email" placeholder="Email" />
 						<div className="wrapper">
-							<input type="text" placeholder="Password" />
-							<span>SHOW</span>
+							<input type={passwordVisibility? "password" : "text"}placeholder="Password" />
+							<span onClick={togglePasswordVisibility}>{passwordVisibility? "Show" : "Hide"}</span>
 						</div>
 						<a href="">FORGET PASSWORD?</a>
-						<button>LOG IN</button>
+						<Link to="/dashboard"><button>LOG IN</button></Link>
+						
 					</form>
 				</div>
 			</div>

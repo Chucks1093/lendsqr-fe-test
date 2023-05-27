@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./styles.scss";
 import getLocalStorage from "../../utils/localStorage";
@@ -27,19 +26,19 @@ function UserDetails()  {
 	
 
 	return (
-		<Fragment>
+		<div className="user_details_page">
 			<Link to="/dashboard" className="userpage_link">
 				<img src="/svg/left_arrow.svg" alt="left_arrow" />
 				<p>Back to Users</p>
 			</Link>
 			<div className="page_details">
 				<h1 className="page_title">User Details</h1>
-				<div>
+				<div className="btn_container">
 					<button className="blacklist_btn" onClick={blackListUser}>BLACKLIST USER</button>
 					<button className="activate_btn" onClick={activateUser}>ACTIVATE USER</button>
 				</div>
 			</div>
-			<div className="user_details">
+			<div className="user_details_id">
 				<div className="user_profile">
 					<div className="user_img">
 						<img
@@ -76,13 +75,16 @@ function UserDetails()  {
 						<p>9912345678/Providus Bank</p>
 					</div>
 				</div>
-				<div className="profile_sections">
-					<h3 className="active">General Deatails</h3>
-					<h3>Document Details</h3>
-					<h3>Bank Deatails</h3>
-					<h3>Loans</h3>
-					<h3>Savings</h3>
-					<h3>Apps and Systems</h3>
+				<div className="profile_sections_container">
+					<div className="profile_sections">
+						<h3 className="active">General Details</h3>
+						<h3>Document Details</h3>
+						<h3>Bank Details</h3>
+						<h3>Loans</h3>
+						<h3>Savings</h3>
+						<h3>Apps and Systems</h3>
+					</div>
+
 				</div>
 			</div>
 			<div className="user_info">
@@ -91,7 +93,7 @@ function UserDetails()  {
 				<Section title="Socials" data={profile.socials} />
 				<Section title="Gurantor" data={profile.guarantor} />
 			</div>
-		</Fragment>
+		</div>
 	);
 }
 export default UserDetails;

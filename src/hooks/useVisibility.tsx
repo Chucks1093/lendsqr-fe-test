@@ -16,11 +16,12 @@ function useVisibility(id : IDType ) {
 			const detailsModal = !!document.getElementById("details_modal");
 			const filterModal = !!document.getElementById("sorter");
 			const targetElement = e.target;
-			if (
-				(detailsModal && !(targetElement instanceof Element && targetElement.closest(".details_modal"))) || 
-				(filterModal && !(targetElement instanceof Element && targetElement.closest("#sorter")))) {
-				hideVisiblity();
-			} 
+			if (detailsModal && !(targetElement instanceof Element && targetElement.closest(".details_modal"))) {
+					hideVisiblity();
+				} else if (filterModal && !(targetElement instanceof Element && targetElement.closest("#sorter"))) {
+					hideVisiblity()
+				}
+			
 			if (targetElement instanceof Element && targetElement.id == id ) {
 				showVisibility();
 			}

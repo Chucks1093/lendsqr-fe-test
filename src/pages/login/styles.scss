@@ -1,14 +1,31 @@
-$primaryColor : #213F7D;
+$primaryColor : #466dbb;
 $inputHeight: 3rem;
 
-.login_logo {
-    margin: 2rem auto 3.4rem;
-    width: 90%;
+.login_heading {
+    height: 10vh;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 3rem;
+
+    width: 100%;
+
+    & .login_logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        height: fit-content;
+
+    }
+
+    & img {
+        width: 8rem;
+    }
 
     & span {
-        color: #213F7D;
-        font-size: 1.3rem;
-        font-weight: 620;
+        color: #3156a0;
+        font-size: 1.7rem;
+        font-weight: 650;
         margin-left: .5rem;
     }
 }
@@ -16,11 +33,13 @@ $inputHeight: 3rem;
 
 .container {
     display: flex;
+    align-items: center;
     width: 90%;
     margin: 0 auto;
+    height: 83vh;
 
     & > div {
-        width: 50%;
+        width: 50%
     }
 
     & .form_container {
@@ -46,6 +65,7 @@ $inputHeight: 3rem;
         font-weight: 700;
         font-size: 40px;
         margin-bottom: 1rem;
+        font-family: "Avenir-Next-B";
     }
 
     & span {
@@ -53,6 +73,8 @@ $inputHeight: 3rem;
         color: #545F7D;
         font-weight: 400;
         font-size: 1rem;
+        font-family: "Avenir-Next-R";
+
     }
 }
 
@@ -64,7 +86,8 @@ $inputHeight: 3rem;
         border: 2px solid rgba(84, 95, 125, 0.15);
         border-radius: 5px;
         margin-bottom: 2rem;
-        text-indent: 1rem
+        text-indent: 1rem;
+        font-family: "Avenir-Next-R";
     };
 
 
@@ -75,6 +98,7 @@ $inputHeight: 3rem;
         font-size: 12px;
         display: block;
         text-decoration: none;
+        font-family: "Avenir-Next-R";
     }
 
     & button {
@@ -87,18 +111,21 @@ $inputHeight: 3rem;
         color: white;
         font-weight: 600;
         cursor: pointer;
+        font-family: "Avenir-Next-R";
+        letter-spacing: 1.5px;
     }
 
     & .wrapper {
         position: relative;
         width: 80%;
         height: $inputHeight;
-        margin-bottom: 2rem;
+        margin-bottom: 1.4rem;
 
         & input {
             width: 100%;
             height: 100%;
             margin-bottom: 1.5rem;
+            font-family: "Avenir-Next-R";
         }
 
         & span {
@@ -109,8 +136,78 @@ $inputHeight: 3rem;
             color: #39CDCC;
             font-size: .7rem;
             font-weight: 700;
-
+            font-family: "Avenir-Next-R";
+            cursor: pointer;
         }
 
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .login_heading {
+        padding-top: 1rem;
+        padding-left: 0rem;
+        align-items: center;
+        justify-content: center;
+
+        .login_logo {
+            height: 100%;
+            margin: 0;
+    
+        }
+    
+        & img {
+            width: 8rem;
+        }
+    }
+    .container {
+        flex-direction: column;
+        width: 100%;
+        overflow-y: scroll;
+
+        & > div {
+            width: 100%;
+        }
+
+        & .form_container {
+            padding-left: 0rem;
+            width: 90%;
+        }
+
+        & .login_image_container {
+            justify-content: center;
+            margin:1.5rem  0;
+            // height: 40%;
+        }
+
+        & .login_image {
+            width: 100%;
+        }
+    }
+    .form_title {
+        text-align: center;
+        & h2 {
+            margin-bottom: .3rem;
+            font-size: 1.8rem;
+        }
+        & span {
+            font-size: .95rem;
+        }
+    }
+    .form {
+        
+        & input {
+            width: 100%;
+        }
+    
+        & .wrapper {
+            width: 100%;
+        }
+    
+        & button {
+            width: 100%;
+            font-weight: bold;
+            height: 2.7rem;
+        }
     }
 }

@@ -1,10 +1,14 @@
 import MenuOptions from "../menu_options/MenuOptions";
+import UserInfo from "../user_info/UserInfo";
 import "./styles.scss";
 import { businesses, customers, settings } from "../../utils/navOptions";
 
+
 function SideNav() {
 	return (
-		<nav className="nav">
+		<nav className="nav" id="nav-bar">
+			<UserInfo />
+
 			<MenuOptions name={"Swich Organization"} icon="briefcase" list />
 			<MenuOptions name={"Dashboard"} icon="home" />
 			<div>
@@ -38,8 +42,12 @@ function SideNav() {
 				))}
 			</div>
 			<div className="log_out">
-				<MenuOptions name={"LogOut"} icon="log_out" />
+				<div>
+					<MenuOptions name={"LogOut"} icon="log_out" />
+				</div>
+				<img className="bell"  src="/svg/bell.svg" alt="" />
 			</div>
+			<span className="version_number">v1.2.0</span>
 		</nav>
 	);
 }

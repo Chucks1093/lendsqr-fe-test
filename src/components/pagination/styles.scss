@@ -54,3 +54,18 @@
 		}
     }
 }
+
+
+@media screen and (max-width: 900px)  {
+	.pagination {
+		margin-bottom: 1.5rem;
+
+		& button {
+			width: 4rem;
+			height: 2.6rem;
+		}
+		& .page_number_container {
+			overflow-x: scroll;
+		}
+	}
+}

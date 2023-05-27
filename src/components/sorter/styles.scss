@@ -1,5 +1,6 @@
 .sorter {
     width: 28%;
+    min-width: 17rem;
     background-color: #ffffff;
     position: absolute;
     padding: 1rem 1rem 0rem;
@@ -42,3 +43,24 @@
     
 }
 
+
+@media screen and (max-width: 1000px) {
+    .sorter {
+        position: fixed;
+        top: 25%;
+        left: 5%;
+        & > .email, & > .date {
+            display: none;
+        }
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .sorter {
+        top: 30%;
+        & > .phone {
+            display: none;
+        }
+    }
+}

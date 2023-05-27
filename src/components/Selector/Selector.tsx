@@ -21,7 +21,7 @@ function Selector(props: SelectorProps){
     };
     
     return (
-        <div>
+        <div className={props.label}>
             <label className="selector_label" htmlFor={props.label}>{props.label}</label>
             <select
                 className={"selector"}

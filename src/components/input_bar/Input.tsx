@@ -21,7 +21,7 @@ function Input(props: InputProps) {
 		})
 	}
 	return (
-		<div>
+		<div className={props.label}>
 			<label className="input_label" htmlFor={props.label}>
 				{props.label}
 			</label>

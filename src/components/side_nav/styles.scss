@@ -3,7 +3,8 @@ nav {
     grid-row: 2/3;
     background-color: #fff;
     overflow-y: scroll;
-    padding:3.5rem 0 0 1.5rem;
+    padding: 0rem 0 1rem 0rem;
+    position: relative;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.082);
 
     &::-webkit-scrollbar {
@@ -28,14 +29,101 @@ nav {
     & h3 {
         color: #545F7D;
         font-weight: 500;
-        font-size: 1rem;
+        font-size: .9rem;
         margin-bottom: 1.5rem;
+        margin-left: 1.4rem;
     }
 
     & > div {
-        margin-top: 2rem;
+        margin-bottom: 2.5rem;
 
+    }
+
+    .log_out {
+        // position: fixed;
+        // // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // width: 75%;
+        // height: 4rem;
+        // background-color: #fff;
+        // bottom: 0;
+        // left: 0;
+        // width: 100%;
+        // border: 1px solid red;
+        padding-top: 2rem;
+        border-top: 2px solid rgba(128, 128, 128, 0.048);
+        
+        margin-bottom: 1rem;
+        
+        & .bell {
+            width: 1.2rem;
+            display: none;
+        }
+        
+        & .menu_options {
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    & .version_number {
+        color: rgb(163, 163, 163);
+        font-weight: 500;
+        font-size: .8rem;
+        display: block;
+        margin-left: 1.5rem;
     }
 }   
 
 
+@media screen and (max-width: 1250px) {
+    nav {
+        position: fixed;
+        width: 75%;
+        max-width: 25rem;
+        top: 11vh;
+        padding: 0rem 0 5rem 0rem;
+        display: none;
+        left: 0;
+        transform: translateX(-100%);
+        transition: 1s transform ease;
+        display: block;
+        height: 89vh;
+        z-index: 1;
+
+        .log_out {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 75%;
+            height: 4rem;
+            background-color: #fff;
+            bottom: 0;
+            left: 0;
+            padding: 1.5rem;
+            max-width: 25rem;
+
+            // width: 100%;
+            border-top: 2px solid rgba(128, 128, 128, 0.048);
+            margin-bottom: 0rem;
+
+
+            & .bell {
+                display: block;
+            }
+    
+            & .menu_options {
+                margin-left: 0rem;
+                margin-bottom: 0rem;
+            }
+    
+            & .version_number {
+                color: rgb(163, 163, 163);
+                font-weight: 500;
+                font-size: .8rem;
+            }
+        }
+
+    }
+}

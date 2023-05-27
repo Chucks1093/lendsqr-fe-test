@@ -16,7 +16,7 @@
     & p {
         font-size: .8rem;
         word-wrap: break-word;
-        color: #545f7dda ;
+        color: #545f7dda;
 
         &.tel , &.lender_name {
             padding-left: .75rem;
@@ -69,3 +69,37 @@
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .user_report {
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+
+        & .user_status {
+            & .status {
+                position: relative;
+                right: 0%;
+            }
+        }
+
+        & p {
+
+            &.email, &.date {
+                display: none;
+            }
+            
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .user_report {
+        grid-template-columns: repeat(2, 1fr) .9fr;
+
+        & p {
+
+            &.email, &.tel, &.date {
+                display: none;
+            }
+        }   
+    }
+}

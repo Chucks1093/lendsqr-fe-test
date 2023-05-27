@@ -1,0 +1,66 @@
+.menu_user_info {
+    margin-top: 2.5rem;
+    margin-left: .5rem;
+
+    & .user_id_container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem ;
+
+        align-items: center;
+
+        & img {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+
+        & a {
+            color: gray;
+        }
+
+
+        & p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #21407db7;
+            margin-bottom: .1rem;
+        }
+
+        & div {
+            margin-right: auto;
+        }
+    }
+
+    & .menu_form {
+        height: 2.85rem;
+        border-radius: 8px;
+        display: flex;
+        border: 1px solid rgb(33, 63, 125, 0.2);
+
+        width: 95%;
+        margin: 1.5rem auto 0;
+
+        & input {
+            height: 100%;
+            border-radius: 8px 0 0 8px;
+            border: 0;
+            width: 80%;
+            text-indent: 1rem;
+
+        }
+
+        & button {
+            height: 100%;
+            width: 20%;
+            border-radius: 0 8px 8px 0;
+            border: 0;
+            background-color: #21407d79;
+
+        }
+    }
+
+
+}

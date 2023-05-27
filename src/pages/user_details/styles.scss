@@ -1,3 +1,7 @@
+.user_details_page {
+    padding: 0 2rem;
+}
+
 .userpage_link {
     display: flex;
     align-items: center;
@@ -50,7 +54,7 @@
 }
 
 
-.user_details {
+.user_details_id {
     margin-top: 2rem;
     padding: 2.3rem 2rem .7rem 2rem;
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.103);
@@ -194,7 +198,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); //as the screen size decreases the size of the box  increases until it reaches 10rem
         // column-gap: 1.5rem;
-        // grid-template-columns: .8fr .8fr 1fr .8fr ;
+        grid-template-columns: .8fr .8fr 1fr .8fr ;
         grid-row: auto; 
         justify-content: center;
         grid-auto-rows: auto;
@@ -238,6 +242,108 @@
             }
         }
 
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .page_details {
+        flex-direction: column;
+
+        & h1 {
+
+            margin-bottom: 2.5rem;
+        }
+
+        & .btn_container {
+            display: flex;
+
+            & button {
+                width: 9rem;
+                padding: .7rem .9rem;
+                font-size: .8rem;
+                height: 2.9rem;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .user_details_id {
+        padding: 1rem 0 0;
+
+        & .user_profile {
+            width: 100%;
+            min-width: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin:1.5rem 0 ;
+
+            & .user_img {
+                margin: 0 0 1rem;
+            }
+
+            & .user_id {
+                text-align: center;
+                & h3 {
+                    font-size: 1.4rem;
+                }
+            }
+            & .user_tier {
+                margin: .8rem 0 1rem;
+                width: 8rem;
+                & p {
+                    font-size: 1rem;
+                }
+                & .star {
+                    width: 1rem;
+                }
+            }
+
+            & .user_finance {
+                margin-left: 0;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+        }
+
+        & .profile_sections_container {
+            width: 100%;
+            overflow-x: scroll;
+            height: 3rem;
+            padding: 0rem 1rem;
+            overflow-y: hidden;
+        }
+
+        & .profile_sections {
+            width: fit-content;
+            padding: 0;
+            align-items: center;
+            height: 3rem;
+            // border: 1px solid rgb(0, 60, 255);
+
+
+            & h3 {
+                width: 10rem;
+                bottom: 0rem;
+                display: block;
+                text-align: center;
+
+                &.active::after {
+                    width: 100%;
+                    bottom: -1rem;
+                }
+            }
+        }
+    }
+
+    .user_info{
+        padding: 0rem 1rem;
+
+        & > div {
+            grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+            
+        }
     }
 
 }
