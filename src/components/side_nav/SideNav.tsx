@@ -41,11 +41,9 @@ function SideNav() {
 					/>
 				))}
 			</div>
-			<div className="log_out">
-				<div>
-					<MenuOptions name={"LogOut"} icon="log_out" />
-				</div>
-				<img className="bell"  src="/svg/bell.svg" alt="" />
+			<div className="log_out fixed">
+					<MenuOptions link="/" name={"LogOut"} icon="log_out" />
+					<img className="bell"  src="/svg/bell.svg" alt="" />
 			</div>
 			<span className="version_number">v1.2.0</span>
 		</nav>

@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import Section from "../../components/user_details_section/Section";
 import addAPIData from "../../utils/userDetails";
 import UserData from "../../types/UserData";
+import { useEffect } from "react";
 
 function UserDetails()  {
 	const userData: UserData[] = getLocalStorage();
@@ -12,6 +13,29 @@ function UserDetails()  {
 	userID = (userID ?? 0) - 1;
 	const profile = addAPIData(userData[userID])
 	const {firstName, lastName} = userData[userID].profile;
+	useEffect(()=>{
+		const handleOutsideClick = (e: Event )=>{
+			const sideBar = document.querySelector("#nav-bar") as HTMLElement;	
+			const menubutton = document.querySelector("#menu-bar") as HTMLElement;
+			const targetElement = e.target as Element;
+			if (!sideBar.classList.contains("hide_bar") && !targetElement.closest("nav")) {
+				sideBar.classList.add("hide_bar");
+
+			}
+
+
+			if (targetElement == menubutton) {
+				console.log("show bar")
+				sideBar.classList.remove("hide_bar");
+				console.log(sideBar)
+			}
+		}
+		document.addEventListener("click", handleOutsideClick);
+
+		return () => document.removeEventListener("click", handleOutsideClick);
+
+	}, []);
+
 
 	const activateUser =()=> {
 		const userStatus = userData[(userID ?? 0)].status;

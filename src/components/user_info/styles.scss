@@ -1,6 +1,7 @@
 .menu_user_info {
     margin-top: 2.5rem;
     margin-left: .5rem;
+    display: none;
 
     & .user_id_container {
         display: flex;
@@ -35,7 +36,7 @@
     }
 
     & .menu_form {
-        height: 2.85rem;
+        height: 2.45rem;
         border-radius: 8px;
         display: flex;
         border: 1px solid rgb(33, 63, 125, 0.2);
@@ -63,4 +64,10 @@
     }
 
 
+}
+
+@media screen and (max-width: 1250px) {
+    .menu_user_info {
+        display: block;
+    }
 }

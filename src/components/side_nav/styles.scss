@@ -1,11 +1,10 @@
-nav {
+.nav {
     grid-column: 1/2;
     grid-row: 2/3;
     background-color: #fff;
     overflow-y: scroll;
-    padding: 0rem 0 1rem 0rem;
+    padding: 4rem 0 1rem 0rem;
     position: relative;
-    transform: translateX(0%);
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.082);
 
     &::-webkit-scrollbar {
@@ -41,17 +40,6 @@ nav {
     }
 
     .log_out {
-        // position: fixed;
-        // // display: flex;
-        // align-items: center;
-        // justify-content: center;
-        // width: 75%;
-        // height: 4rem;
-        // background-color: #fff;
-        // bottom: 0;
-        // left: 0;
-        // width: 100%;
-        // border: 1px solid red;
         padding-top: 2rem;
         border-top: 2px solid rgba(128, 128, 128, 0.048);
         
@@ -78,41 +66,37 @@ nav {
 
 
 @media screen and (max-width: 1250px) {
-    nav {
-        position: fixed;
-        width: 75%;
+    nav.hide_bar {
+        transform: translateX(-100%);
+
+    }
+    .nav {
+        padding: 0rem 0 1rem 0rem;
+        $navWidth: 75%;
+        position: absolute;
+        width: $navWidth;
         max-width: 25rem;
         top: 11vh;
         padding: 0rem 0 5rem 0rem;
         display: none;
         left: 0;
-        
         transition: 1s transform ease;
         display: block;
         height: 89vh;
         z-index: 1;
 
-        &.hide_bar {
-            transform: translateX(-100%);
-        }
-        &.show_bar {
-            transform: translateX(0%);
-        }
-
-        .log_out {
+        & .log_out {
             position: fixed;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 75%;
+            width: $navWidth;
             height: 4rem;
             background-color: #fff;
             bottom: 0;
             left: 0;
             padding: 1.5rem;
             max-width: 25rem;
-
-            // width: 100%;
             border-top: 2px solid rgba(128, 128, 128, 0.048);
             margin-bottom: 0rem;
 
@@ -132,6 +116,7 @@ nav {
                 font-size: .8rem;
             }
         }
+
 
     }
 }

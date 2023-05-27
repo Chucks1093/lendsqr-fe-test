@@ -3,8 +3,8 @@ import "./styles.scss";
 function TopNav() : JSX.Element{
 	return (
         <header className="header">
-            <div id="menu-bar" className="menu_bar">
-                <img src="/svg/menu.svg" alt="" />
+            <div  className="menu_bar">
+                <img id="menu-bar" src="/svg/menu.svg" alt="" />
             </div>
             <div className="dashboard_logo">
                 <img src="/logo.svg" alt="lendsqr" />
