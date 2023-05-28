@@ -15,10 +15,10 @@ function useVisibility(id : IDType ) {
 	useEffect(()=>{
 		const handleOutsideClick = (e: Event )=>{
 			const dashBoard = document.querySelector("#dash_board") as HTMLElement;	
+			const targetElement = e.target as Element;
 			const menubutton = document.querySelector("#menu-bar") as HTMLImageElement;
 			const detailsModal = !!document.getElementById("details_modal");
 			const filterModal = !!document.getElementById("sorter");
-			const targetElement = e.target as Element;
 
 			if (detailsModal && !targetElement.closest(".details_modal")) {
 				hideVisiblity();
@@ -33,7 +33,6 @@ function useVisibility(id : IDType ) {
 			if (dashBoard.classList.contains("show_bar") && !targetElement.closest("nav")) {
 				dashBoard.classList.toggle("show_bar")
 
-				// sideBar.classList.add("show_bar");
 				menubutton.src = "/svg/menu.svg";
 			} else if (targetElement== menubutton && !dashBoard.classList.contains("show_bar"))  {
 				console.log("opend from menu")

@@ -15,20 +15,22 @@ function UserDetails()  {
 	const {firstName, lastName} = userData[userID].profile;
 	useEffect(()=>{
 		const handleOutsideClick = (e: Event )=>{
-			const sideBar = document.querySelector("#nav-bar") as HTMLElement;	
-			const menubutton = document.querySelector("#menu-bar") as HTMLElement;
+			const dashBoard = document.querySelector("#dash_board") as HTMLElement;	
 			const targetElement = e.target as Element;
-			if (!sideBar.classList.contains("hide_bar") && !targetElement.closest("nav")) {
-				sideBar.classList.add("hide_bar");
+			const menubutton = document.querySelector("#menu-bar") as HTMLImageElement;
+			if (dashBoard.classList.contains("show_bar") && !targetElement.closest("nav")) {
+				dashBoard.classList.toggle("show_bar")
 
-			}
+				menubutton.src = "/svg/menu.svg";
+			} else if (targetElement== menubutton && !dashBoard.classList.contains("show_bar"))  {
+				console.log("opend from menu")
+				dashBoard.classList.toggle("show_bar")
+				menubutton.src = "/svg/cancel.svg";
 
+			} else if (targetElement== menubutton && dashBoard.classList.contains("show_bar")) {
+				dashBoard.classList.toggle("show_bar")
 
-			if (targetElement == menubutton) {
-				console.log("show bar")
-				sideBar.classList.remove("hide_bar");
-				console.log(sideBar)
-			}
+			} 
 		}
 		document.addEventListener("click", handleOutsideClick);
 
