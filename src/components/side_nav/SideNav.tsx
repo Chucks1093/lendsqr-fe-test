@@ -18,6 +18,7 @@ function SideNav() {
 						key={i}
 						name={option.name}
 						icon={option.icon}
+						link={option.link}
 					/>
 				))}
 			</div>

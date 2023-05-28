@@ -1,7 +1,8 @@
 export const customers = [
     {
         name: "Users",
-        icon: "users"
+        icon: "users",
+        link: "/dashboard"
     },
     {
         name: "Guarantors",

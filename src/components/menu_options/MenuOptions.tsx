@@ -11,7 +11,7 @@ type MenuOptionsProps = {
 
 function MenuOptions(props: MenuOptionsProps): ReactElement {
 	return (
-		<NavLink to={props.link? props.link : "/dashoboard"} className="menu_options">
+		<NavLink to={props.link? props.link : "/"} className={`menu_options ${({isActive}: {isActive: boolean})=> isActive ? "active" : ""}`}>
 			<img
 				className="icon"
 				src={`/svg/${props.icon}.svg`}

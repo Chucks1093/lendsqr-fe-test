@@ -1,10 +1,28 @@
 .menu_options {
     display: flex;
-    margin-bottom: 2rem;
     align-items: center;
     text-decoration: none;
     color: #213F7D;
-    margin-left: 1.7rem;
+    margin-left: 0rem;
+    padding-left: 1.7rem;
+    height: 3.5rem;
+
+    &.active {
+        background-color: #39cdcd2d;
+        position: relative;
+
+        &::after {
+            content: "";
+            height: 100%;
+            width: .2rem;
+            background-color: #39CDCC;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+
+    }
 
     & .list {
         display: block;
