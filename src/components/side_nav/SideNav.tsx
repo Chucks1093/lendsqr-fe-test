@@ -6,7 +6,7 @@ import { businesses, customers, settings } from "../../utils/navOptions";
 
 function SideNav() {
 	return (
-		<nav className="nav hide" id="nav-bar">
+		<nav className="nav" id="nav-bar">
 			<UserInfo />
 
 			<MenuOptions name={"Swich Organization"} icon="briefcase" list />

@@ -9,7 +9,6 @@ function useVisibility(id : IDType ) {
 	};
 	const hideVisiblity = () => {
 		setVisibility(false);
-		
 	};	
 	
 	useEffect(()=>{

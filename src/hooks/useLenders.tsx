@@ -16,7 +16,6 @@ function useLenders(): LendersHookResult {
 		setLenders((value) => {
 			const data = getLocalStorage();
 			if (value.data.length === data.length) {
-				console.log("I updated status --1")
 				return {
 					...value,
 					shownData: data.slice(start, end),
@@ -30,7 +29,6 @@ function useLenders(): LendersHookResult {
 					: data;
 				const refreshedData = getFilteredArray(obj, data);
 				const newArr = refreshedData.slice(start, end);
-				console.log("I updated status --2")
 				return {
 					...value,
 					shownData: newArr,
